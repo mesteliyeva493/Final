@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+footer{
+    background-color: #0C0C0C;
+    .footerContainer{
+        width: 100%;
+        padding: 70px ;
+        
+.Icons{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+ 
+    a{  
+        color: #789B03;
+        text-decoration: none;
+        padding:  10px;
+        background-color: white;
+        margin: 10px;
+     &:hover{
+        color: white;
+        background-color: #b2ff47;
+        transition: 0.5s;
+     }
+    }
+}
+    }
+    .footerBottom{
+        font-size: 21px;
+        color: #272C32;
+        padding: 25px;
+        text-align: center;
+    }}
+
+    
+@media (max-width: 700px){
+
+    .Icons {
+        a{
+            padding: 8px;
+            margin: 4px;
+        }
+     
+    }
+}
