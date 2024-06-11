@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#DoYou {
+    padding: 100px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+
+    p{
+        font-size: 19px;
+    }
+    .content {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      
+        img {
+            height: 500px;
+        }
+
+        .left {
+
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+              .describtion{
+                margin-bottom: 10px;
+                 h2{
+               
+                    font-weight: 800;
+                    font-size: 50px;
+                 }
+              }
+            .type {
+           
+                gap: 20px;
+                display: flex  ;
+                h3{
+                    font-size: 25px;
+
+                    font-weight: 600;
+
+                }
+                .iconF {
+                    font-size: 22px;
+                    color:#789B03;
+                }
+            }
+
+        }
+    }
+
+  @media (max-width: 768px) {
+    padding: 50px;
+    
+    .content {
+      flex-direction: column;
+      
+      img {
+        height: auto;
+        width: 100%;
+      }
+
+      .left {
+        .describtion{
+            h2{
+                 font-weight: 700;
+                font-size: 40px;
+             }
+        }
+
+
+        .type {
+            display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;e
+
+          p{
+            font-weight: 100;
+          }
+        }
+    }}}
+    
+}

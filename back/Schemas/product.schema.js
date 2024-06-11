@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-const TeaSchema=new mongoose.Schema({
+const ProductSchema=new mongoose.Schema({
    img:String,
    name:String,
    title:String,
@@ -11,4 +11,4 @@ const TeaSchema=new mongoose.Schema({
    // tags:[]
 },{timestamps:true})
 
-module.exports=TeaSchema
+module.exports=ProductSchema

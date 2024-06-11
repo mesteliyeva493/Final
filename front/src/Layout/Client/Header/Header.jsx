@@ -24,10 +24,10 @@ function Header() {
                   <Link to="myaccount">My Account</Link>
                   <ul className='dropdown'>
                     <li>
-                     <Link to="orders">Orders</Link>
+                      <Link to="orders">Orders</Link>
                     </li>
                     <li>
-                    <Link to="accountdetail">Account Detail</Link>
+                      <Link to="accountdetail">Account Detail</Link>
                     </li>
                   </ul>
                 </li>
@@ -44,20 +44,38 @@ function Header() {
                 <li>
                 </li>
               </ul>
-             
             </div>
-            <div className="col-6 d-lg-none d-flex justify-content-end hamburger-menu">
-                <RxHamburgerMenu  />
-              </div>
-            
-          </div>
-         
-        </div>
 
+            <div className="col-6 d-lg-none d-flex justify-content-end hamburger-menu">
+       
+              <button class="btn btn-primary"type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">salsa
+                </button>
+
+            </div>
+          </div>
+        </div>
+        
       </header>
 
 
-
+      <div style={{zIndex:"23333333333333", height:"500px"}} class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+        <ul className="nav-links">
+            <li className='Home'><Link to="/" data-bs-dismiss="offcanvas">Home</Link></li>
+            <li><Link to="aboutus" data-bs-dismiss="offcanvas">About Us</Link></li>
+            <li><Link to="shop" data-bs-dismiss="offcanvas">Shop</Link></li>
+            <li><Link to="myaccount" data-bs-dismiss="offcanvas">My Account</Link></li>
+            <li><Link to="contactus" data-bs-dismiss="offcanvas">Contact Us</Link></li>
+            <li><Link to="basket" data-bs-dismiss="offcanvas"><LiaShoppingBagSolid className='basket' /></Link></li>
+          </ul>
+       
+        </div>
+      </div>
 
     </>
   )
