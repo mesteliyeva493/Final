@@ -1,11 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
 
 #author {
 
-    background-image: url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic02.jpg");
+
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic02.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -102,11 +104,11 @@ flex-direction: column;
             }
             @media (max-width: 768px) {
                 padding: 18px 20px;
-                border: 5px solid white;
+                border: 2px solid white;
             }
 
             @media (max-width: 480px) {
-                border: 3px solid white;
+                border: 1px solid white;
 
                 padding: 15px 30px;  
             }

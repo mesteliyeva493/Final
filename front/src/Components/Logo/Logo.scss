@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+#logo{
+    padding: 50px; 
+
+    .logo{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .logo{
+  
+    display: flex;
+    gap: 10px;
+    justify-content: center;   
+    }
+
+}
+@media (max-width: 480px){
+    .logo{
+  
+        display: flex;
+        gap: 10px;
+        justify-content: center;   
+        }
+
+}

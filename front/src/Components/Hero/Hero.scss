@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
 #hero {
     background-image: url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2020/02/hero1-img.jpg");
@@ -17,6 +19,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
         @media  (max-width: 768px) {
               
                 display: flex;
@@ -41,11 +44,11 @@
             margin-top: 20px;
             font-weight: 900;
             font-family: 'Playfair Display', serif;
-            font-size: 64px;
+            font-size: 62px;
             @media  (max-width: 768px) {
                 margin-top: 0px;
-                font-size: 50px;
-
+                text-align: center;
+           
         }
 
         }

@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#our {
+    padding: 80px;
+
+    .container {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+
+        .our {
+            h2 {
+                font-weight: 700;
+                font-size: 50px;
+                font-family: 'Playfair Display', serif;
+            }
+            
+
+        }
+
+        .productC {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .card {
+                border: none;
+                padding: 15px;
+                width: 315px;
+                font-family: 'Playfair Display', serif;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                .card-desc {
+                    margin: 15px;
+
+                    p {
+                        font-weight: 800;
+                        color: #333333c6;
+                    }
+                }
+            }
+        }
+    }
+}

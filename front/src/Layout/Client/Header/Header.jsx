@@ -17,7 +17,7 @@ function Header() {
             </div>
             <div className="col-lg-6 col-6 d-lg-flex d-none justify-content-end align-items-center">
               <ul className="nav-links">
-                <li className='Home'><Link to="/">Home</Link></li>
+                <li><Link to="/">Home</Link></li>
                 <li><Link to="aboutus">About Us</Link></li>
                 <li><Link to="shop">Shop</Link></li>
                 <li className='dropdown-container'>
@@ -47,31 +47,40 @@ function Header() {
             </div>
 
             <div className="col-6 d-lg-none d-flex justify-content-end hamburger-menu">
-       
-              <button class="btn btn-primary"type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">salsa
+              <button className="btn btn-primary "type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><RxHamburgerMenu/>
                 </button>
 
             </div>
           </div>
         </div>
-        
       </header>
-
-
-      <div style={{zIndex:"23333333333333", height:"500px"}} class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <div style={{zIndex:"23333333333333", height:"300px"}} className="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div className="offcanvas-header">
+          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-        <ul className="nav-links">
-            <li className='Home'><Link to="/" data-bs-dismiss="offcanvas">Home</Link></li>
-            <li><Link to="aboutus" data-bs-dismiss="offcanvas">About Us</Link></li>
-            <li><Link to="shop" data-bs-dismiss="offcanvas">Shop</Link></li>
-            <li><Link to="myaccount" data-bs-dismiss="offcanvas">My Account</Link></li>
-            <li><Link to="contactus" data-bs-dismiss="offcanvas">Contact Us</Link></li>
-            <li><Link to="basket" data-bs-dismiss="offcanvas"><LiaShoppingBagSolid className='basket' /></Link></li>
+        <div className="offcanvas-body">
+        <ul>
+            <li className='navbar'><Link to="/" data-bs-dismiss="offcanvas">Home</Link></li>
+            <hr />
+            <li  className='navbar'><Link to="aboutus" data-bs-dismiss="offcanvas">About Us</Link></li>
+            <hr />
+            <li className='navbar'><Link to="shop" data-bs-dismiss="offcanvas">Shop</Link></li>
+            <hr />
+            <li className='dropdown-container'><Link to="myaccount" data-bs-dismiss="offcanvas">My Account</Link>
+            <ul className='dropdown2'>
+                    <li>
+                      <Link to="orders">Orders</Link>
+                    </li>
+                    <li>
+                      <Link to="accountdetail">Account Detail</Link>
+                    </li>
+                  </ul>
+            </li>
+            <hr />
+            <li className='navbar'><Link to="contactus" data-bs-dismiss="offcanvas">Contact Us</Link></li>
+            <hr />
+            <li className='navbar'><Link to="basket" data-bs-dismiss="offcanvas"><LiaShoppingBagSolid /></Link></li>
           </ul>
        
         </div>

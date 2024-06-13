@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#lofo {
+    background-image: url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic03-free-img.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 85px ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+
+    .card-custom {
+        min-width: 200px;
+
+        .card-body{
+          height: 280px;
+        }
+    }
+
+    .cardimg {
+        text-align: center;
+    }
+
+    .cardlofo {
+        text-align: center;
+      
+    }
+    @media(max-width: 768px){
+    .card-custom{
+        .card-body{
+              width: 100% !important;
+        }
+    }
+  #lofo{
+    height: 1200px;
+  }
+
+    }
+    @media  (max-width: 480px){
+        .card-custom{
+            .card-body{
+                  width: 100% !important;
+            }
+        }
+
+    }
+}

@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
 
 #DoYou {
@@ -69,7 +71,11 @@
 
       .left {
         .describtion{
+          p{
+            text-align: center  ;
+          }
             h2{
+                text-align: center;
                  font-weight: 700;
                 font-size: 40px;
              }
@@ -87,5 +93,43 @@
           }
         }
     }}}
+
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+     
+    padding: 50px;
     
-}
+    .content {
+      flex-direction: column;
+      
+      img {
+        height: auto;
+        width: 100%;
+      }
+
+      .left {
+        .describtion{
+          p{
+            text-align: center;
+          }
+            h2{
+                text-align: center;
+                 font-weight: 700;
+                font-size: 40px;
+             }
+        }
+
+
+        .type {
+            display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;e
+
+          p{
+            font-weight: 100;
+          
+   
+    }
+    
+  }}}}}

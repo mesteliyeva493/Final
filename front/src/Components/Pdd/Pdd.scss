@@ -1,0 +1,71 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+  
+  #pdd {
+    padding: 80px; 
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+  
+  }
+
+  .cardPdd {
+
+   width: 400px;
+
+
+  }
+  
+  .imgpdd {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cardp {
+    text-align: center;
+    h5{
+        font-weight: 800;
+        font-size: 30px;
+        font-family: 'Playfair Display', serif;
+
+    }
+    p{
+        color:  rgb(99, 99, 99);
+        font-size: 15px;
+    }
+  }
+  
+  @media  (max-width: 768px) {
+    .cardp {
+        h5{
+            font-weight: 600;
+            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+    
+        }
+        p{
+            color:  rgb(99, 99, 99);
+            font-size: 15px;
+        }
+    }
+  }
+  
+
+  @media (max-width:450px){
+    .cardPdd {
+
+      width: 100px;
+   
+   
+     }
+  }

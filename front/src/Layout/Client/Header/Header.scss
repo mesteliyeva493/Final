@@ -70,18 +70,13 @@
         }
       }
   
-      .hamburger-menu {
-        color: white;
-        background-color: #789B03;
-        width: 35px;
-        font-size: 20px;
-        padding: 5px 8px;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
-  
+     .btn-primary {
+      font-size: 20px;
+      border:#789B03 ;
+      background-color: #789B03;
+
+     }
+
       @media (max-width: 768px) {
         .nav-links {
           display: none;
