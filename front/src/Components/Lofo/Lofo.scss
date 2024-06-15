@@ -19,7 +19,7 @@
 
     .card-custom {
         min-width: 200px;
-
+         
         .card-body{
           height: 280px;
         }
@@ -35,13 +35,16 @@
     }
     @media(max-width: 768px){
     .card-custom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px !important;
+
         .card-body{
               width: 100% !important;
         }
     }
-  #lofo{
-    height: 1200px;
-  }
+
 
     }
     @media  (max-width: 480px){
@@ -51,5 +54,31 @@
             }
         }
 
+    }
+    @media  (max-width: 320px){
+       
+#lofo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+
+    .card-custom {
+        width: 100% !important;
+
+        .card-body{
+          height: 280px;
+        }
+    }
+
+    .cardimg {
+        text-align: center;
+    }
+
+    .cardlofo {
+        text-align: center;
+      
+    }}
     }
 }

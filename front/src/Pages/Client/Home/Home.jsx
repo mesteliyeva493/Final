@@ -8,20 +8,25 @@ import Logo from '../../../Components/Logo/Logo'
 import Our from '../../../Components/Our/Our'
 import Pdd from '../../../Components/Pdd/Pdd'
 import Aliquet from '../../../Components/Aliquet/Aliquet'
+import Rhoncus from '../../../Components/Rhoncus/Rhoncus'
+import Hcontact from '../../../Components/Hcontact/Hcontact'
 
 function Home() {
   return (
     <>
 
     <Hero/>
-    <DoYou/>
+      <DoYou/>
     <Author/>
     <Lofo/>
-    <Metus/>
+      <Metus/>
     <Logo/>
     <Our/>
+    <Rhoncus/>
     <Pdd/>
     <Aliquet/>
+    <Hcontact/>
+    
     </>
   )
 }

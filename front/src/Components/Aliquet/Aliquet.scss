@@ -21,7 +21,6 @@
   .quet{
     display: flex;
     flex-direction: column;
-
     gap: 20px;
     .s {
 
@@ -42,5 +41,14 @@
         width: 100px;
     }
   }
+ 
+  @media (max-width: 300px) {
+    
+  .quet{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+}
 }

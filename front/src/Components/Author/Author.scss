@@ -18,14 +18,15 @@
     justify-content: center;
     text-align: center;
     color: white;
-    
+
     @media (max-width: 768px) {
         gap: 8px;
     }
 
     @media (max-width: 480px) {
-         gap: 8px;
-         }
+        gap: 8px;
+    }
+
     hr {
         background-color: #a3ce18;
         height: 2px;
@@ -35,7 +36,7 @@
     }
 
     p {
-       font-weight: 500;
+        font-weight: 500;
         font-size: 15px;
 
     }
@@ -50,58 +51,66 @@
         }
 
         @media (max-width: 480px) {
-            font-size: 29px;  
+            font-size: 29px;
         }
     }
-    .buttonCB{
+
+    .buttonCB {
         justify-content: center;
         display: flex;
         gap: 20px;
 
         @media (max-width: 768px) {
-display: flex;
-gap: 30px;
-flex-direction: column;
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
         }
 
         @media (max-width: 480px) {
-display: flex;      
-gap: 30px;
+            display: flex;
+            gap: 30px;
 
-flex-direction: column;
-  }
-        a{
+            flex-direction: column;
+        }
+
+        a {
             text-decoration: none;
             color: white;
             font-weight: 500;
         }
-        .buttonC{
+
+        .buttonC {
             background-color: #a3ce18;
             border-radius: 25px;
             padding: 10px 30px;
-            &:hover{
+
+            &:hover {
                 transition: 0.3s;
-                color: #41510b ;
+                color: #41510b;
                 background-color: white;
             }
+
             @media (max-width: 768px) {
-                padding: 10px 20px;  
+                padding: 10px 20px;
             }
 
             @media (max-width: 480px) {
-                padding: 10px 30px; 
+                padding: 10px 30px;
             }
         }
-        .buttonB{
+
+        .buttonB {
             border: 1px solid white;
             background-color: transparent;
             border-radius: 25px;
-             padding: 15px 15px;
-             &:hover{
+            padding: 15px 15px;
+
+            &:hover {
                 transition: 0.3s;
-                color: #41510b ;
+                color: #41510b;
                 background-color: white;
             }
+
             @media (max-width: 768px) {
                 padding: 18px 20px;
                 border: 2px solid white;
@@ -110,7 +119,7 @@ flex-direction: column;
             @media (max-width: 480px) {
                 border: 1px solid white;
 
-                padding: 15px 30px;  
+                padding: 15px 30px;
             }
         }
     }

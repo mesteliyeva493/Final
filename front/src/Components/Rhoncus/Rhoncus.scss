@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Rhoncus{
+ background-color: #F7F4EB;
+ padding: 80px; 
+   .dom{ 
+    .dom2{
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        img{
+            width: 65px;
+        }
+        h6{
+            font-weight: 600;
+            font-size: 55px;
+            color: rgb(93, 93, 93);
+        } 
+        p{
+            font-weight: 600;
+            font-size: 18px;
+            color: rgb(93, 93, 93);
+
+        }
+
+    }    
+   }
+
+
+ .rhoncus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bring{
+       .bring2{ 
+        display: flex;
+        gap: 2px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p{
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .h3{  
+      
+            h3{
+                            
+            font-weight: 600;
+            font-size: 50px;
+
+            }
+
+        }
+        img{
+            margin-bottom: -180px;
+            width: 380px;
+        }
+       }
+    }
+  }
+  
+  .heart{
+    .heart2{
+        gap: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        img{
+            width: 65px;
+        }
+        h6{
+            font-weight: 600;
+            font-size: 55px;
+            color: rgb(93, 93, 93);
+        } 
+        p{
+            font-weight: 600;
+            font-size: 18px;
+            color: rgb(93, 93, 93);
+
+        }
+    }
+  }
+
+  
+  @media (max-width:320px){
+    .rhoncus{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .bring{
+            .bring2{
+             display: flex;
+             gap: 2px;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             p{
+                 font-weight: 600;
+                 font-size: 18px;
+             }
+             h3{ 
+                width: 100%;
+                 font-weight: 600;
+                 font-size: 40px;
+
+             }
+             img{
+                 margin-bottom: -180px;
+                 width: 100%;
+             }
+            }
+         }
+         .heart{
+            margin-top: 200px;
+            .heart2{
+                display: flex;
+                flex-direction: column;
+                align-items: center;  
+                img{
+                    width: 65px;
+                }
+                h6{
+                    font-weight: 600;
+                    font-size: 55px;
+                    color: rgb(93, 93, 93);
+                } 
+                p{
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: rgb(93, 93, 93);
+        
+                }
+            }
+          }
+    }
+  }
+  
+  @media (max-width:480px){
+    .rhoncus{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .bring{
+            .bring2{
+             display: flex;
+             gap: 2px;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             p{
+                 font-weight: 600;
+                 font-size: 18px;
+             }
+             h3{ 
+                width: 100%;
+                 font-weight: 600;
+                 font-size: 40px;
+
+             }
+             img{
+                 margin-bottom: -180px;
+                 width: 100%;
+             }
+            }
+         }
+         .heart{
+            margin-top: 200px;
+            .heart2{
+                display: flex;
+                flex-direction: column;
+                align-items: center;  
+                img{
+                    width: 65px;
+                }
+                h6{
+                    font-weight: 600;
+                    font-size: 55px;
+                    color: rgb(93, 93, 93);
+                } 
+                p{
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: rgb(93, 93, 93);
+        
+                }
+            }
+          }
+    }
+  }
+}
