@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+#Purus {
+
+    background: linear-gradient(rgba(0, 0, 0, 0.708), rgba(0, 0, 0, 0.776)), url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic16-free-img.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 83vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    .purus {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 20px;
+
+        h4 {
+
+            font-weight: 600;
+            font-size: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .line {
+            margin: 0 auto;
+            width: 120px;
+            height: 2px;
+            background-color: #789B03;
+            margin-bottom: 10px;
+        }
+
+
+        .pnm {
+
+            margin-right: 100px;
+            margin-left: 100px;
+            display: flex;
+            gap: 10px;
+
+            .p6 {
+                margin: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+
+                p {
+
+                    font-size: 18px;
+                }
+
+                h6 {
+
+                    font-weight: 600;
+                    font-size: 30px;
+                    font-family: 'Playfair Display', serif;
+                }
+            }
+
+        }
+    }
+
+    @media (max-width: 320px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+
+        .purus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2px;
+
+            h4 {
+
+                font-weight: 600;
+                font-size: 30px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            .line {
+                margin: 0 auto;
+                width: 120px;
+                height: 2px;
+                background-color: #789B03;
+                margin-bottom: 10px;
+            }
+
+
+            .pnm {
+
+                margin-right: 0px;
+                margin-left: 0px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .p6 {
+                    margin: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+
+                    p {
+
+                        font-size: 18px;
+                    }
+
+                    h6 {
+
+                        font-weight: 600;
+                        font-size: 30px;
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 481px) {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+
+        .purus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2px;
+
+            h4 {
+
+                font-weight: 600;
+                font-size: 30px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            .line {
+                margin: 0 auto;
+                width: 120px;
+                height: 2px;
+                background-color: #789B03;
+                margin-bottom: 10px;
+            }
+
+
+            .pnm {
+
+                margin-right: 25px;
+                margin-left: 25px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .p6 {
+                    margin: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+
+                    p {
+
+                        font-size: 18px;
+                    }
+
+                    h6 {
+
+                        font-weight: 600;
+                        font-size: 30px;
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+
+        .purus {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            gap: 2px;
+
+            h4 {
+
+                font-weight: 600;
+                font-size: 30px;
+                font-family: 'Playfair Display', serif;
+            }
+
+            .line {
+                margin: 0 auto;
+                width: 120px;
+                height: 2px;
+                background-color: #789B03;
+                margin-bottom: 10px;
+            }
+
+
+            .pnm {
+
+                margin-right: 100px;
+                margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .p6 {
+                    margin: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+
+                    p {
+
+                        font-size: 18px;
+                    }
+
+                    h6 {
+
+                        font-weight: 600;
+                        font-size: 30px;
+                        font-family: 'Playfair Display', serif;
+                    }
+                }
+
+            }
+
+        }
+
+
+
+
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+
+
+        height: auto;
+
+        .purus {
+            .pnm {
+
+                margin-right: 0px;
+                margin-left: 0px;
+
+                .p6 {
+                    margin: 0px;
+
+                }
+
+            }
+        }
+
+    }
+
+    @media (min-width: 1025px) and (max-width: 1200px) {
+
+        height: auto;
+
+        .purus {
+            .pnm {
+
+                margin-right: 0px;
+                margin-left: 0px;
+
+                .p6 {
+                    margin: 0px;
+
+                }
+
+            }
+        }
+    }
+}
