@@ -31,6 +31,10 @@ const ROUTES=[
                 element:<MyAccount/>
             },
             {
+                path:"contactUs",
+                element:<ContactUs/>
+            },
+            {
                 path:"accountdetail",
                 element:<AccountDetail/>
             },

@@ -74,6 +74,8 @@
     }
 
     @media (max-width: 320px) {
+        padding: 30px;
+
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -136,6 +138,7 @@
     }
 
     @media (max-width: 481px) {
+        padding: 30px;
 
         display: flex;
         flex-direction: row;
@@ -198,8 +201,9 @@
         }
 
     }
-
     @media (min-width: 481px) and (max-width: 768px) {
+        padding: 30px;
+
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -268,7 +272,7 @@
 
     @media (min-width: 769px) and (max-width: 1024px) {
 
-
+        padding: 30px;
         height: auto;
 
         .purus {

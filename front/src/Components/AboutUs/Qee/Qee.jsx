@@ -38,7 +38,7 @@ function Qee() {
                                 <FontAwesomeIcon className='iconF' icon={faCircleHalfStroke} />
                             </div>
                             <div className='iconcontact5'>
-                                <h5>Quaerat Mollit Inceptos
+                                <h5>Exercitation Augue
                                 </h5>
                                 <p>Anim ducimus dictum proin sit viverra cursus ante temporibus officia, augue pretium, consequatur. Hic porttitor tristique dolor curabitur, officia architec.
                                 </p>

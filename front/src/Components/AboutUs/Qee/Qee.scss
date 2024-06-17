@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Qee{
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    .imperdiet{
+        display: flex;
+      flex-direction: row;
+        gap: 20px;
+        .Quaerat{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 55px;
+            .imone{
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                h5 {
+                    font-family: 'Playfair Display', serif;
+                    font-weight: 600;
+                    font-size: 55px;
+                }
+                .line {
+                    width: 50px;
+                    height: 2px;
+                    background-color: #b9ea18;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+
+                }
+            }
+            .imtwo{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .qe{
+                    
+                    width: 90%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 14px ;
+                    .iconF{
+
+                        font-size: 15px;
+                        color: #92bd05;
+                    }
+                    .iconcontact5{
+                        h5 {
+                            font-family: 'Playfair Display', serif;
+                            margin-top: 10px;
+                            font-weight: 600;
+                            font-size: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .Exercitation{
+        width: 50%;
+        .qe{
+            display: flex;
+            flex-direction: row;
+            gap: 14px ;
+            margin-top: 55px;
+            .iconF{
+                font-size: 15px;
+                color: #92bd05;
+            }
+            h5 {
+                font-family: 'Playfair Display', serif;
+
+                font-weight: 600;
+                font-size: 32px;
+            }
+        }
+    }
+
+    @media (max-width: 320px){
+        padding: 30px;
+        .imperdiet{
+            display: flex;
+          flex-direction: column;
+          .Quaerat{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .imone{
+                align-items: start;
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                h5 {
+                    font-family: 'Playfair Display', serif;
+                    font-weight: 600;
+                    font-size: 30px;
+                }
+                .line {
+                    width: 30px;
+                    height: 1px;
+                    background-color: #b9ea18;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+
+                }}
+                 .imtwo{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .qe{
+                    
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px ;
+                    .iconF{
+
+                        font-size: 15px;
+                        color: #92bd05;
+                    }
+                    .iconcontact5{
+                        h5 {
+                            font-family: 'Playfair Display', serif;
+                            margin-top: 10px;
+                            font-weight: 600;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        
+        }
+        }    
+        
+    .Exercitation{
+        width: 100%;
+        .qe{
+            display: flex;
+            flex-direction: column;
+            gap: 14px ;
+            margin-top: 5px;
+            .iconF{
+                font-size: 15px;
+                color: #92bd05;
+            }
+            h5 {
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+                font-size: 25px;
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+  
+    }
+
+    @media (max-width:480px) {
+        
+  
+        padding: 30px;
+        .imperdiet{
+            display: flex;
+          flex-direction: column;
+          .Quaerat{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            .imone{
+                align-items: start;
+                p{
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                h5 {
+                    font-family: 'Playfair Display', serif;
+                    font-weight: 600;
+                    font-size: 30px;
+                }
+                .line {
+                    width: 30px;
+                    height: 1px;
+                    background-color: #b9ea18;
+                    margin-bottom: 10px;
+                    margin-top: 20px;
+
+                }}
+                 .imtwo{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .qe{
+                    
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px ;
+                    .iconF{
+
+                        font-size: 15px;
+                        color: #92bd05;
+                    }
+                    .iconcontact5{
+                        h5 {
+                            font-family: 'Playfair Display', serif;
+                            margin-top: 10px;
+                            font-weight: 600;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        
+        }
+        }    
+        
+    .Exercitation{
+        width: 100%;
+        .qe{
+            display: flex;
+            flex-direction: column;
+            gap: 14px ;
+            margin-top: 5px;
+            .iconF{
+                font-size: 15px;
+                color: #92bd05;
+            }
+            h5 {
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+                font-size: 25px;
+            }
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+  
+    }
+    @media (min-width: 481px) and (max-width: 768px){
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        .imperdiet{
+            display: flex;
+          flex-direction: row;
+            gap: 20px;
+            .Quaerat{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                .imone{
+                    p{
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    h5 {
+                        font-family: 'Playfair Display', serif;
+                        font-weight: 600;
+                        font-size: 40px;
+                    }
+                    .line {
+                        width: 50px;
+                        height: 2px;
+                        background-color: #b9ea18;
+                        margin-bottom: 10px;
+                        margin-top: 20px;
+    
+                    }
+                }
+                .imtwo{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .qe{
+                        
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 14px ;
+                        .iconF{
+    
+                            font-size: 15px;
+                            color: #92bd05;
+                        }
+                        .iconcontact5{
+                            h5 {
+                                font-family: 'Playfair Display', serif;
+                                margin-top: 10px;
+                                font-weight: 600;
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .Exercitation{
+            width: 50%;
+            .qe{
+                display: flex;
+                flex-direction: row;
+                gap: 14px ;
+                margin-top: 55px;
+                .iconF{
+                    font-size: 15px;
+                    color: #92bd05;
+                }
+                h5 {
+                    font-family: 'Playfair Display', serif;
+    
+                    font-weight: 600;
+                    font-size: 25px;
+                }
+            }
+
+            img{
+                width: 100%;
+            }
+        }
+
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        padding: 70px;
+        display: flex;
+        justify-content: center;
+        .imperdiet{
+            display: flex;
+          flex-direction: row;
+            gap: 20px;
+            .Quaerat{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                .imone{
+                    p{
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                    h5 {
+                        font-family: 'Playfair Display', serif;
+                        font-weight: 600;
+                        font-size: 40px;
+                    }
+                    .line {
+                        width: 50px;
+                        height: 2px;
+                        background-color: #b9ea18;
+                        margin-bottom: 10px;
+                        margin-top: 20px;
+    
+                    }
+                }
+                .imtwo{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    .qe{
+                        
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        gap: 14px ;
+                        .iconF{
+    
+                            font-size: 15px;
+                            color: #92bd05;
+                        }
+                        .iconcontact5{
+                            h5 {
+                                font-family: 'Playfair Display', serif;
+                                margin-top: 10px;
+                                font-weight: 600;
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .Exercitation{
+            width: 50%;
+            .qe{
+                display: flex;
+                flex-direction: row;
+                gap: 14px ;
+                margin-top: 55px;
+                .iconF{
+                    font-size: 15px;
+                    color: #92bd05;
+                }
+                h5 {
+                    font-family: 'Playfair Display', serif;
+    
+                    font-weight: 600;
+                    font-size: 25px;
+                }
+            }
+
+            img{
+                width: 100%;
+            }
+        }}
+        @media (min-width: 1025px) and (max-width: 1400px) {
+            padding: 70px;
+            display: flex;
+            justify-content: center;
+            .imperdiet{
+                display: flex;
+              flex-direction: row;
+                gap: 20px;
+                .Quaerat{
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 5px;
+                    .imone{
+                        p{
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                        h5 {
+                            font-family: 'Playfair Display', serif;
+                            font-weight: 600;
+                            font-size: 40px;
+                        }
+                        .line {
+                            width: 50px;
+                            height: 2px;
+                            background-color: #b9ea18;
+                            margin-bottom: 10px;
+                            margin-top: 20px;
+        
+                        }
+                    }
+                    .imtwo{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        .qe{
+                            
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 14px ;
+                            .iconF{
+        
+                                font-size: 15px;
+                                color: #92bd05;
+                            }
+                            .iconcontact5{
+                                h5 {
+                                    font-family: 'Playfair Display', serif;
+                                    margin-top: 10px;
+                                    font-weight: 600;
+                                    font-size: 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .Exercitation{
+                width: 50%;
+                .qe{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 14px ;
+                    margin-top: 55px;
+                    .iconF{
+                        font-size: 15px;
+                        color: #92bd05;
+                    }
+                    h5 {
+                        font-family: 'Playfair Display', serif;
+        
+                        font-weight: 600;
+                        font-size: 25px;
+                    }
+                }
+    
+                img{
+                    width: 100%;
+                }
+            }}
+        
+    }

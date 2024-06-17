@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Visitors{
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.708), rgba(0, 0, 0, 0.776)), url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic18-free-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+   .visitors{
+    h3{
+        font-family: 'Playfair Display', serif;
+        font-weight: 800;
+        font-size: 45px;
+      }
+      p{
+        font-family: 'Playfair Display', serif;
+            font-size:18px;
+      }
+   }
+   @media (max-width: 320px) {
+    .visitors{
+        padding: 20px;
+        h3{
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 30px;
+          }
+          p{
+            font-family: 'Playfair Display', serif;
+                font-size:18px;
+          }
+    }
+
+}
+@media (max-width: 480px) {
+    .visitors{
+        padding: 20px;
+        h3{
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 30px;
+          }
+          p{
+            font-family: 'Playfair Display', serif;
+                font-size:18px;
+          }
+    }
+
+}
+@media (min-width: 481px) and (max-width: 768px)  {
+    .visitors{
+        padding: 20px;
+        h3{
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 30px;
+          }
+          p{
+            font-family: 'Playfair Display', serif;
+                font-size:18px;
+          }
+    }
+
+}
+}

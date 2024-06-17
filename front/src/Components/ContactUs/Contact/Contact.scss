@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Contact {
+    border: 1px solid black;
+    background: linear-gradient(rgba(255, 255, 255, 0.887), rgb(255, 255, 255)), url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic25-free-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+
+    .contact {
+        border: 1px solid rgb(137, 59, 59);
+      width: 1200px;
+        display: flex;
+        gap: 20px;
+
+        .us {
+            border: 1px solid rgb(219, 167, 167);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 25px;
+
+            .usone {
+                border: 1px solid rgb(0, 0, 0);
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .if {
+                    border: 1px solid rgb(0, 0, 0);
+                    height: 200px;
+                    width: 100%;
+                }
+
+            }
+
+            .ustwo {
+                border: 1px solid rgb(0, 0, 0);
+
+                display: flex;
+                flex-direction: column;
+
+                .iconcontact {
+                    border: 1px solid rgb(137, 197, 33);
+
+                    font-family: 'Playfair Display', serif;
+                    display: flex;
+
+                    gap: 13px;
+
+                    h5 {
+                        font-weight: 600;
+                        font-size: 22px;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        color: rgb(92, 92, 92);
+
+                    }
+
+                    .iconC {
+                        font-size: 25px;
+                        color: #92bd05;
+                    }
+                }
+            }
+        }
+
+        .book {
+            border: 1px solid rgb(153, 255, 192);
+
+            border-radius: 8px;
+            background-color: transparent;
+            width: 50%;
+            padding: 50px;
+            border: 1px solid #d1d138;
+
+            form {
+                border: 1px solid #e3e3e8;
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input {
+                    border: 1px solid #E8E8E3;
+                    padding: 12px;
+                }
+
+                textarea {
+                    border: 1px solid #E8E8E3;
+                    padding: 12px;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 12px 10px;
+                    border-radius: 20px;
+                    background-color: #92bd05;
+                    border: none;
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 320px) {
+        .contact {
+            flex-direction: column;
+            align-items: center;
+
+            .us {
+                width: 100%;
+                align-items: center;
+
+                .usone {
+                    align-items: center;
+                    text-align: center;
+
+                }
+
+                .ustwo {
+                    align-items: center;
+
+                    .iconcontact {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .book {
+                width: 100%;
+
+                form {
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+
+    @media (max-width: 480px) {
+        .contact {
+            flex-direction: column;
+            align-items: center;
+
+            .us {
+                width: 100%;
+                align-items: center;
+
+                .usone {
+                    align-items: center;
+                    text-align: center;
+
+                }
+
+                .ustwo {
+                    align-items: center;
+
+                    .iconcontact {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .book {
+                width: 100%;
+
+                form {
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+ 
+    @media (min-width: 481px) and (max-width: 625px) {
+  
+    
+        .contact {
+            flex-direction: column;
+            align-items: center;
+
+            .us {
+                width: 100%;
+                align-items: center;
+
+                .usone {
+                    align-items: center;
+                    text-align: center;
+
+                }
+
+                .ustwo {
+                    align-items: center;
+
+                    .iconcontact {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .book {
+                width: 100%;
+
+                form {
+                    button {
+                        width: 100%;
+                    }
+
+
+    }
+    @media (min-width: 769px) and (max-width: 1024px){
+    
+        .contact {
+            .us {
+                width: 50%;
+
+
+                .usone {
+
+                    .if {
+                        height: 200px;
+                        width: 100%;
+                    }
+
+                }
+
+            }
+
+            .book {
+                width: 100%;
+            }
+
+        
+    
+}
+}}}}}
