@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#Account {
+#Register {
   padding: 80px;
   background-color: #f7f4eb;
 
@@ -21,8 +21,7 @@
   }
 
 
-
-  .account {
+  .register {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,6 +61,7 @@
         width: 100%;
         padding: 20px;
       }
+
       h3 {
         text-align: center;
         font-family: 'Playfair Display', serif;
@@ -97,19 +97,6 @@
         }
         @media (min-width: 481px) and (max-width: 768px) {
           width: auto;
-        }
-      }
-
-
-      .check {
-        display: flex;
-        align-items: center;
-        color: #789B03;
-
-        .checkk {
-          color: #789B03;
-          width: auto;
-          margin-right: 5px;
         }
       }
 

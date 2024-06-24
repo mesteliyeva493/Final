@@ -63,7 +63,6 @@ function Hcontact() {
                   <p>ayurveda@example.com | ayurved@example.com
                  </p>
                 <div>
-                  
                 </div>
               </div>
             </div>

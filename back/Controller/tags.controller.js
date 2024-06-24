@@ -1,10 +1,10 @@
-const ProductModel=require('../Model/product.model')
+const TagsModel=require('../Model/tags.model')
 
-const ProductController
+const TagsController
 ={
     getAll: async (req, res) => {
         try {
-            const target = await ProductModel.find()
+            const target = await TagsModel.find()
             res.send(target)
         } catch (error) {
             res.send("error")
@@ -15,7 +15,7 @@ const ProductController
     get: async (req, res) => {
         try {
             const { id } = req.params
-            const found = await ProductModel.findById(id)
+            const found = await TagsModel.findById(id)
             res.send(found)
         } catch (error) {
             res.send("error")
@@ -25,7 +25,7 @@ const ProductController
     delete: async (req, res) => {
         try {
             const { id } = req.params
-            const deleted = await ProductModel.findByIdAndDelete(id)
+            const deleted = await TagsModel.findByIdAndDelete(id)
             res.send(deleted)
         } catch (error) {
             res.send(error)
@@ -33,10 +33,10 @@ const ProductController
     },
     post: async (req, res) => {
         try {
-            const { img,name, title,description, price,category,tags } = req.body
-            const newProduct = new ProductModel({ img,name, title,description, price,category,tags})
-            await newProduct.save()
-            res.send(newProduct)
+            const { title } = req.body
+            const newTag = new TagsModel({title })
+            await newTag.save()
+            res.send(newTag)
         } catch (error) {
             res.send(error)
         }
@@ -44,13 +44,13 @@ const ProductController
     update: async (req, res) => {
         try {
             const { id } = req.params
-            await ProductModel.findByIdAndUpdate(id, { ...req.body })
-            const updatedProduct = await ProductModel.findById(id)
-            res.send(updatedProduct)
+            await TagsModel.findByIdAndUpdate(id, { ...req.body })
+            const updatedTag= await TagsModel.findById(id)
+            res.send(updatedTag)
         } catch (error) {
             res.send(error)
         }
     },
 }
 
-module.exports = ProductController
+module.exports = TagsController

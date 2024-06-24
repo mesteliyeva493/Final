@@ -1,10 +1,10 @@
-const ProductModel=require('../Model/product.model')
+const LogoModel=require('../Model/logo.model')
 
-const ProductController
+const LogoController
 ={
     getAll: async (req, res) => {
         try {
-            const target = await ProductModel.find()
+            const target = await LogoModel.find()
             res.send(target)
         } catch (error) {
             res.send("error")
@@ -15,7 +15,7 @@ const ProductController
     get: async (req, res) => {
         try {
             const { id } = req.params
-            const found = await ProductModel.findById(id)
+            const found = await LogoModel.findById(id)
             res.send(found)
         } catch (error) {
             res.send("error")
@@ -25,7 +25,7 @@ const ProductController
     delete: async (req, res) => {
         try {
             const { id } = req.params
-            const deleted = await ProductModel.findByIdAndDelete(id)
+            const deleted = await LogoModel.findByIdAndDelete(id)
             res.send(deleted)
         } catch (error) {
             res.send(error)
@@ -33,10 +33,10 @@ const ProductController
     },
     post: async (req, res) => {
         try {
-            const { img,name, title,description, price,category,tags } = req.body
-            const newProduct = new ProductModel({ img,name, title,description, price,category,tags})
-            await newProduct.save()
-            res.send(newProduct)
+            const { img} = req.body
+            const newLogo = new LogoModel({ img})
+            await newLogo.save()
+            res.send(newLogo)
         } catch (error) {
             res.send(error)
         }
@@ -44,13 +44,13 @@ const ProductController
     update: async (req, res) => {
         try {
             const { id } = req.params
-            await ProductModel.findByIdAndUpdate(id, { ...req.body })
-            const updatedProduct = await ProductModel.findById(id)
-            res.send(updatedProduct)
+            await LogoModel.findByIdAndUpdate(id, { ...req.body })
+            const updatedLogo= await LogoModel.findById(id)
+            res.send(updatedLogo)
         } catch (error) {
             res.send(error)
         }
     },
 }
 
-module.exports = ProductController
+module.exports = LogoController
