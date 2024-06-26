@@ -4,6 +4,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import { FaShoppingBag } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
+import { FaRegStar } from "react-icons/fa6";
 
 function Shopdetail() {
     const [activeTab, setActiveTab] = useState('description');
@@ -108,7 +109,11 @@ function Shopdetail() {
                                 </div>
                                 <div className='rawtwo'>
                                     <p>Your rating *
-                                        {/* ulduz qoyumalidi */}
+                                    <FaRegStar />
+                                    <FaRegStar />
+                                    <FaRegStar />
+                                    <FaRegStar />
+                                    <FaRegStar />
                                     </p>
                                 </div>
                                 <div className='rewthree'>

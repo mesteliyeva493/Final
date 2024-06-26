@@ -1,38 +1,23 @@
-import React from 'react'
-import './Logo.scss'
+import React, { useContext } from 'react';
+import './Logo.scss';
+import mainContext from '../../../Context/Context';
 
 
 function Logo() {
+  const {datal}=useContext(mainContext)
   return (
     <section id='logo'>
       <div className='container logo'>
         <div className='row'>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-1.svg" alt="" />
-          </div>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-2.svg" alt="" />
-          </div>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-3.svg" alt="" />
-          </div>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-4.svg" alt="" />
-          </div>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-5.svg" alt="" />
-          </div>
-          <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
-            <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2021/03/logo-5.svg" alt="" />
-          </div>
+          {datal.map((logo, index) => (
+            <div key={index} className='col-12 col-sm-6 col-md-4 col-lg-2'>
+              <img src={logo.img} alt={`logo-${index + 1}`} />
+            </div>
+          ))}
         </div>
       </div>
-
     </section>
-  )
+  );
 }
 
-export default Logo
+export default Logo;

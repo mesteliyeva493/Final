@@ -1,0 +1,55 @@
+#Add{
+  margin-top: 20px;
+}
+.tabs {
+    width: 100%;
+    // max-width:1200px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    .tab-labels {
+      display: flex;
+  
+      .tab-label {
+        flex: 1;
+        text-align: center;
+        padding: 10px 0;
+        background-color:#71BC78;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+  
+        &:hover {
+            background-color: #79c480e8 ;
+
+        }
+  
+        &.active {
+            background-color: #93eb9ce8 ;
+    
+        }
+      }
+    }
+  
+    .tab-content {
+      .content {
+        padding: 20px;
+  
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .tab-labels {
+      flex-direction: column;
+  
+      .tab-label {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }

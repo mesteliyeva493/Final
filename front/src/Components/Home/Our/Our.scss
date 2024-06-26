@@ -9,6 +9,7 @@
     padding: 80px;
 
     .container {
+
         display: flex;
         gap: 20px;
         flex-direction: column;
@@ -16,6 +17,7 @@
         margin: 0 auto;
 
         .our {
+
             h2 {
                 font-weight: 700;
                 font-size: 50px;
@@ -26,6 +28,7 @@
         }
 
         .productC {
+
             display: flex;
             gap: 5px;
             flex-wrap: wrap;

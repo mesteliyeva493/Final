@@ -4,10 +4,10 @@ import { Outlet } from 'react-router'
 
 function AdminRoot() {
   return (
-    <>
+    <div style={{display:'flex',width:'100%'}}>
     <Header/>
     <Outlet/>
-    </>
+    </div>
   )
 }
 

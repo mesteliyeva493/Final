@@ -4,7 +4,7 @@ const mongoose=require('mongoose')
 const CardSchema=new mongoose.Schema({
     icon:String,
     title:String,
-    describtion:String,
+    description:String,
 
 },{timestamps:true})
 

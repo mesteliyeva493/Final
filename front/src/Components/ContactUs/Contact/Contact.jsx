@@ -21,7 +21,7 @@ function Contact() {
       Subject: Yup.string()
         .max(20, 'Must be 20 characters or less')
         .required('Required'),
-      Subject: Yup.string()
+      Message: Yup.string()
         .max(20, 'Must be 20 characters or less')
         .required('Required'),
     }),
@@ -35,7 +35,10 @@ function Contact() {
         <div className='us'>
           <div className='usone'>
             <div className='if' >
-            <iframe src="https://maps.gstatic.com/mapfiles/openhand_8_8.cur" title="Iframe Example"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.421312723393!2d49.85149987583545!3d40.377354071446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d077c61fef3%3A0xfa4594c97092ca01!2sAF%20Business%20House!5e0!3m2!1sen!2saz!4v1715852391365!5m2!1sen!2saz"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
           <div className='ustwo'>
@@ -54,10 +57,10 @@ function Contact() {
               </div>
               <div className='iconcontact5'>
                 <h5>Email</h5>
-                  <p>ayurveda@example.com | ayurved@example.com
-                 </p>
+                <p>ayurveda@example.com | ayurved@example.com
+                </p>
                 <div>
-                  
+
                 </div>
               </div>
             </div>
@@ -94,8 +97,8 @@ function Contact() {
 
             <input
               placeholder='Your Subject'
-              id="subject"
-              name="subject"
+              id="Subject"
+              name="Subject"
               type="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -105,6 +108,7 @@ function Contact() {
               <div>{formik.errors.Subject}</div>
             ) : null}
 
+          
             <textarea
               placeholder='Your Message'
               id="message"

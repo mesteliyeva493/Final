@@ -1,3 +1,4 @@
+import Add from "../Pages/Admin/Add/Add";
 import AdminRoot from "../Pages/Admin/AdminRoot";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import AboutUs from "../Pages/Client/About us/AboutUs";
@@ -83,6 +84,12 @@ const ROUTES=[
             {
                 path:"",
                 element:<Dashboard/>
+               
+            },
+            {
+                path:"add",
+                element:<Add/>
+  
                
             }
         ]
