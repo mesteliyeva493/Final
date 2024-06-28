@@ -805,12 +805,10 @@ const products = [
             <div className='cat'>
               <h5>Product Categories</h5>
               <ul className='productlist'>
-                {['Essential Oil', 'Soap', 'Tea'].map((category, index) => (
-                  <li key={index}>
-                    <a href=''>{category}</a>
+                  <li>
+                    <a href=''>category</a>
                     <p>(4)</p>
-                  </li>
-                ))}
+                    </li>
               </ul>
             </div>
             <div className='recently'>

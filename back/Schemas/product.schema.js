@@ -7,7 +7,7 @@ const ProductSchema = new mongoose.Schema({
    title: String,
    describtion: String,
    price: Number,
-   // categoryId: { type: mongoose.Schema.Types.ObjectId, ref: 'Productsone' },
+   categoryId: { type: mongoose.Schema.Types.ObjectId, ref: 'Productsone' },
    // tags:[]
 }, { timestamps: true })
 
