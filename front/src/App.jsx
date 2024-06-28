@@ -9,13 +9,13 @@ import { BasketContextProvider } from './Context/Basketc.jsx'
 import ROUTES from './Router/Router';
 import axios from 'axios'
 function App() {
-  const [data, setData] = useState([])
-  const [datal,setDatal]=useState([])
+  const [card, setCard] = useState([])
+  const [logo,setLogo]=useState([])
   const [original, setOriginal] = useState([])
   const [filtering, setFiltering] = useState([])
   useEffect(() => {
     axios.get('http://localhost:5050/card').then((res) => {
-      setData(res.data)
+      setCard(res.data)
       setOriginal(res.data)
       setFiltering(res.data)
 
@@ -24,16 +24,16 @@ function App() {
 
   useEffect(() => {
     axios.get('http://localhost:5050/logo').then((res) => {
-      setDatal(res.data)
+      setLogo(res.data)
 
     })
   }, [])
 
 
-  const deleteData = async (id) => {
+  const deleteCard= async (id) => {
     await axios.delete(`http://localhost:5050/card/${id}`).then(() => {
-      const filtering = data.filter(item => item._id != id)
-      setData(filtering)
+      const filtering = card.filter(item => item._id != id)
+      setCard(filtering)
       setOriginal(res.data)
       setFiltering(res.data)
      
@@ -41,19 +41,39 @@ function App() {
     })
   }
 
-  const deletetData = async (id) => {
+  const deletetLogo = async (id) => {
     await axios.delete(`http://localhost:5050/logo/${id}`).then(() => {
-      const filtering = data.filter(item => item._id != id)
-      setDatal(filtering)
+      const filtering = logo.filter(item => item._id != id)
+      setLogo(filtering)
      
 
     })
   }
 
 
+  const searchingData = (e) => {
+
+    const searchedData = e.target.value.trim().toLowerCase()
+    if (searchedData == "") {
+      setData([...original])
+    } else {
+      const searching = filtering.filter(item => item.title.trim().toLowerCase().includes(searchedData))
+      setData([...searching])
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 
   const values = {
-    data, setData, deleteData,setDatal,datal,deletetData
+    card, setCard, deleteCard,setLogo,logo,deletetLogo,searchingData
   }
 
 

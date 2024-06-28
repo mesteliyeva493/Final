@@ -1,8 +1,12 @@
 import React from 'react'
+import BasketP from '../../../Components/BasketP/BasketP'
 
 function Basket() {
   return (
-    <div>Basket</div>
+    <>
+    <BasketP/>
+    
+    </>
   )
 }
 

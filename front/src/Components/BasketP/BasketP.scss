@@ -1,0 +1,207 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#BasketP {
+    padding: 80px;
+    background-color: #f7f4eb;
+
+    @media (max-width: 544px) {
+        padding: 10px;
+    }
+
+    .basketp {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 60px 55px;
+        background-color: white;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            padding: 0px;
+            flex-direction: column;
+        }
+
+        @media (max-width: 320px) {
+            padding: 0px;
+        }
+
+        .basket {
+            width: 70%;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+      .table-bordered{
+      
+        img{
+            width: 60px;
+        }
+      }
+          
+        }
+        
+
+        .cardtotal {
+            border: 1px solid #abb8c3;
+            width: 25%;
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
+            .list2 {
+                ul {
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+
+                        button {
+                            font-size: 15px;
+                            background-color: #a3ce18;
+                            border-radius: 30px;
+                            padding: 17px 35px;
+                            color: white;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            border: none;
+
+                            &:hover {
+                                transition: 0.3s;
+                                color: #41510ba7;
+                                background-color: #a3ce18;
+                            }
+                        }
+
+                    }
+                }
+
+                .list-group2 {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    .list-group-item2 {
+                        padding: 10px 15px;
+                        background-color: #fff;
+                        border: 1px solid #ddd;
+
+                        p {
+                            font-weight: 400;
+                        }
+
+                        span {
+                            margin-right: 20px;
+                        }
+
+                        .h5item {
+                            margin-right: 160px;
+
+                            h2 {
+                                font-weight: 700;
+                                font-size: 1.2rem;
+                            }
+
+                            h5 {
+                                font-size: 18px;
+                                font-weight: 700;
+                                font-family: 'Playfair Display', serif;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 768px) {
+                .list2 {
+                    ul {
+                        li {
+                            button {
+                                padding: 12px 25px;
+                            }
+                        }
+                    }
+
+                    .list-group2 {
+                        .list-group-item2 {
+                            .h5item {
+                                margin-right: 0;
+
+                                h2 {
+                                    font-size: 1rem;
+                                }
+
+                                h5 {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 480px) {
+                .list2 {
+                    ul {
+                        li {
+                            button {
+                                padding: 10px 20px;
+                            }
+                        }
+                    }
+
+                    .list-group2 {
+                        .list-group-item2 {
+                            .h5item {
+                                h2 {
+                                    font-size: 0.9rem;
+                                }
+
+                                h5 {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 320px) {
+                .list2 {
+                    ul {
+                        li {
+                            button {
+                                padding: 8px 15px;
+                            }
+                        }
+                    }
+
+                    .list-group2 {
+                        .list-group-item2 {
+                            .h5item {
+                                h2 {
+                                    font-size: 0.8rem;
+                                }
+
+                                h5 {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 390px) {
+   .table{
+    border: 3px solid green !important;
+   }
+    }

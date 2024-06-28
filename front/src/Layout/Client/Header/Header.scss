@@ -240,3 +240,84 @@ header {
     display: block !important;
   }
 }
+.offcanvas.resOff.offcanvas-top {
+  z-index: 23333333333333;
+  height: 300px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+
+  .offcanvas-header {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .offcanvas-body {
+    .hamburger-menu {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn {
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+      li {
+        a {
+          text-decoration: none;
+          color: #000;
+          display: block;
+          padding: 0;
+
+          &:hover {
+            color: #007bff;
+          }
+        }
+
+        &.dropdown-container {
+          position: relative;
+
+          ul.dropdown2 {
+            display: none;
+            position: relative;
+            background: #fff;
+            list-style: none;
+            padding-left: 0;
+
+            li a {
+              padding: 0;
+            }
+          }
+
+          &.open ul.dropdown2 {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
