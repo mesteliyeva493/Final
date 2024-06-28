@@ -1,4 +1,4 @@
-const TagsModel=require('../Model/tags.model')
+const TagsModel=require('../Model/tag.model')
 
 const TagsController
 ={

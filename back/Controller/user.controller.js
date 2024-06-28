@@ -8,7 +8,7 @@ const UserController = {
             const target = await UserModel.find()
             res.send(target)
         } catch (error) {
-            res.send("error")
+            res.send(error)
         }
 
     },

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
-const CategorySchema=require('../Schemas/category.schema')
+const categorySchema=require('../Schemas/category.schema')
 
 
-const CategoryModel=mongoose.model('category',CategorySchema)
+const CategoryModel=mongoose.model('category',categorySchema)
 
 
 module.exports=CategoryModel  

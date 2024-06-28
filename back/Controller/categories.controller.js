@@ -1,6 +1,6 @@
 const CategoryModel=require('../Model/category.model')
 
-const CategoryController
+const CategoriesController
 ={
     getAll: async (req, res) => {
         try {
@@ -53,4 +53,4 @@ const CategoryController
     },
 }
 
-module.exports = CategoryController
+module.exports = CategoriesController

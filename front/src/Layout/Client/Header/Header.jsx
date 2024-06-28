@@ -76,7 +76,7 @@ function Header() {
           </div>
         </div>
       </header>
-      <div style={{ zIndex: "23333333333333", height: "300px" }} className="offcanvas resOff offcanvas-top" tabindex="-1" id="offcanvasTop1" aria-labelledby="offcanvasTopLabel">
+      <div style={{ zIndex: "23333333333333", height: "inherit" }} className="offcanvas resOff offcanvas-top" tabindex="-1" id="offcanvasTop1" aria-labelledby="offcanvasTopLabel">
         <div className="offcanvas-header">
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
