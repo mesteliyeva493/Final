@@ -5,7 +5,7 @@ const ProductController
     = {
     getAll: async (req, res) => {
         try {
-            const target = await ProductModel.find().populate('tags', { title: 1 }).populate('category').exec()
+            const target = await ProductModel.find().populate('tags', { title: 1 }).populate('category', { title: 1 }).exec()
             res.send(target)
         } catch (error) {
             res.send("error: " + error)
