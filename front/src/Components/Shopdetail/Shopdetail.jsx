@@ -1,12 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Shopdetail.scss';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { FaShoppingBag } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaRegStar } from "react-icons/fa6";
+import axios from 'axios';
 
 function Shopdetail() {
+    const { id } = useParams()
+
+  const [detail, setDetail] = useState({})
+  useEffect(() => {
+    axios.get(`http://localhost:5050/product/${id}`).then(res => {
+      setDetail(res.data);
+    });
+  }, []);
+
     const [activeTab, setActiveTab] = useState('description');
     const lineRef = useRef(null);
     const descRef = useRef(null);
@@ -31,22 +41,19 @@ function Shopdetail() {
             <div className='shopdetail'>
                 <div className='first'>
                     <div className='firstimg'>
-                        <img src="https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag.jpg" alt="" />
+                        {/* <img src={detail.img}alt="" /> */}
                     </div>
                     <div className='firstdes'>
                         <div className='des1'>
                             <div>
-                                <p>Tea</p>
+                                {/* <p>{detail.title}</p> */}
                             </div>
-                            <div className='fa'>
-                                <button><FaAngleLeft /></button>
-                                <button><FaAngleRight /></button>
-                            </div>
+                          
                         </div>
                         <div className='des2'>
-                            <h6>Cinnamon tea</h6>
-                            <p className='price'>£62.00, £56.00.</p>
-                            <p>Morbi occaecat ea perferendis molestie repellat purus, cras velit minim culpa conubia, laudantium habitant tristique, aenean occaecati volutpat temporibus netus porta dignissim ac aliqua commodo modi nulla, iste aliquet quidem. Quisquam consectetuer repellat, auctor eaque sociis. Egestas beatae mus quia, egestas.</p>
+                            {/* <h6>{detail.name}</h6> */}
+                            {/* <p className='price'>£{detail.price     }</p> */}
+                            {/* <p>{detail.description}</p> */}
                         </div>
                         <div className='des3'>
                             <div className='span'>
@@ -61,10 +68,10 @@ function Shopdetail() {
                         <hr />
                         <div className='des4'>
                             <div>
-                                <p>category:</p>
+                                {/* <p>category:{detail.category}</p> */}
                             </div>
                             <div>
-                                <p>tags:</p>
+                                {/* <p>tags:{detail.tags}</p> */}
                             </div>
                         </div>
                     </div>

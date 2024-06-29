@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import './Checkout.scss';
 import { HiLockClosed } from "react-icons/hi2";
 import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -24,7 +25,8 @@ const Checkout = () => {
                 <hr />
               </div>
               <div>
-                <p>Already have an account? <a href="">Log in</a></p>
+                <p>Already have an account?
+                <Link to="/login"> login</Link></p>
               </div>
             </div>
             <div className='naem'>

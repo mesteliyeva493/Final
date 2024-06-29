@@ -1,12 +1,16 @@
-import React, { useState, lineRef } from 'react';
+import React, { useState, lineRef, useContext } from 'react';
 import { IoIosClose } from "react-icons/io";
 
 import { Link } from 'react-router-dom';
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import './Header.scss';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { basketc } from '../../../Context/Basketc';
+import mainContext from '../../../Context/Context';
 
 function Header() {
+  const {basket,decrease,increase,deletedBasket,addBasket}=useContext(basketc)
+  const {product}=useContext(mainContext)
   const [showCart, setShowCart] = useState(false);
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
@@ -115,31 +119,37 @@ function Header() {
         </div>
         <div ref={lineRef} className='line'></div>
         <div className="offcanvas-body">
-          <div className='basketimg'>
-            <img src="	https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic06-free-img-300x300.jpg" alt="" />
-          </div>
-          <div className='basketdesc'>
-            <div className='desc1'>
-              <div>
-                <p>Ayurvedic Soap
-                </p>
+        {basket.map((products) => (
+            <div key={products.product.id}>
+              <div className='basketimg'>
+                <img src={products.product.img} alt="" />
               </div>
-              <div>
-                <button><IoIosClose />
-                </button>
+              <div className='basketdesc'>
+                <div className='desc1'>
+                  <div>
+                    <p>{products.product.title}</p>
+                  </div>
+                  <div>
+                    <button onClick={()=>{
+                      deletedBasket(products._id)
+                    }}><IoIosClose /></button>
+                  </div>
+                </div>
+                <div className='desc2'>
+                  <div className='basketspan'>
+                    <span onClick={() => decrease(products)}>-</span>
+                    <span>{products.count}</span>
+                    <span onClick={() => increase(products)}>+</span>
+                  </div>
+                  <div>
+                    <p>{products.product.price}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className='desc2'>
-              <div className='basketspan'>
-                <span>-</span>
-                <span>0</span>
-                <span>+</span>
-              </div>
-              <div>
-                <p>$64.00</p>
-              </div>
-            </div>
-          </div>
+          ))}
+          
+          
         </div>
         <div ref={lineRef} className='line'></div>
         <div className="offcanvas-footer">
@@ -155,10 +165,10 @@ function Header() {
           </div>
           <div ref={lineRef} className='line'></div>
           <div className='basketbutton'>
-            <button>view card</button>
-            <button>checkout</button>
-            <button>
-              Continue Shopping</button>
+           <Link to="basket">    <button >view card</button></Link>
+             <Link to="checkout"><button >checkout</button></Link>
+             <Link to="shop"> <button>
+              Continue Shopping</button></Link>
           </div>
         </div>
 

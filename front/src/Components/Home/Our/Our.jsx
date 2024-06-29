@@ -1,120 +1,18 @@
 
-
-// import React, { useState } from 'react';
-// import './Our.scss';
-// import { Link } from 'react-router-dom';
-// import { FaShoppingBag } from "react-icons/fa";
-// import { IoEyeSharp } from "react-icons/io5";
-
-
-// const products = [
-//   {
-//     imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-//     category: "tea",
-//     name: "Cinnamon Tea",
-//     price: "$56.00"
-//   },
-//   {
-//     imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-//     category: "tea",
-//     name: "Cinnamon Tea",
-//     price: "$56.00"
-//   },
-//   {
-//     imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-//     category: "tea",
-//     name: "Cinnamon Tea",
-//     price: "$56.00"
-//   },
-//   {
-//     imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-//     category: "tea",
-//     name: "Cinnamon Tea",
-//     price: "$56.00"
-//   },
-
-// ];
-
-// function Our() {
-
-
-//   return (
-//     <section id='our'>
-//       <div className='container'>
-//         <div className='our'>
-//           <h2>Our Recent Products!</h2>
-//         </div>
-//         <div className="productC">
-//           {products.map((product, index) => (
-//             <div key={index} className="card">
-//               <Link to={"shopdetail"}>
-//                 <img src={product.imgSrc} alt={product.name} />
-//               </Link>
-//               <div className='overlay'>
-//                 <FaShoppingBag className='icon' />
-             
-//                 <IoEyeSharp className='icon' />
-//               </div>
-//               <div className='card-desc'>
-//                 <p>{product.category}</p>
-//                 <h6>{product.name}</h6>
-//                 <p>{product.price}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       <div>
-      
-       
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Our;
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Our.scss';
 import { Link } from 'react-router-dom';
 import { FaShoppingBag } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import mainContext from '../../../Context/Context';
+import { basketc } from '../../../Context/Basketc';
 
-const products = [
-  {
-    imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-    category: "tea",
-    name: "Cinnamon Tea",
-    price: "$56.00",
-    description:"    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolore nemo quia! Nulla quas similique saepe reiciendis possimus assumenda nam error officiis, vero quis esse dolore. Nulla quisquam esse ex.",
 
-  },
-  {
-    imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-    category: "tea",
-    name: "Cinnamon Tea",
-    price: "$56.00",
-    description:"    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolore nemo quia! Nulla quas similique saepe reiciendis possimus assumenda nam error officiis, vero quis esse dolore. Nulla quisquam esse ex.",
-
-  },
-  {
-    imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-    category: "tea",
-    name: "Cinnamon Tea",
-    price: "$56.00",
-    description:"    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolore nemo quia! Nulla quas similique saepe reiciendis possimus assumenda nam error officiis, vero quis esse dolore. Nulla quisquam esse ex.",
-  },
-  {
-    imgSrc: "https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/lemon-tea-bag-300x300.jpg",
-    category: "tea",
-    name: "Cinnamon Tea",
-    price: "$56.00",
-    description:"    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam dolore nemo quia! Nulla quas similique saepe reiciendis possimus assumenda nam error officiis, vero quis esse dolore. Nulla quisquam esse ex.",
-
-  },
-];
 
 function Our() {
+  const {addBasket}=useContext(basketc)
+  const {product}=useContext(mainContext)
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -135,20 +33,23 @@ function Our() {
           <h2>Our Recent Products!</h2>
         </div>
         <div className="productC">
-          {products.map((product, index) => (
+          {product.slice(0,4).map((products, index) => (
             <div key={index} className="card">
-              <Link to={"shopdetail"}>
-                <img src={product.imgSrc} alt={product.name} />
-              </Link>
+              {/* <Link to={`/${products._id}`} >
+               
+              </Link> */}
+               <img src={products.img} alt={products.name} />
               <div className='overlay'>
-                <FaShoppingBag className='icon' />
-                <IoEyeSharp className='icon' onClick={() => openModal(product)} />
+                <FaShoppingBag className='icon' onClick={()=>{
+                  addBasket(products)
+                }} />
+                <IoEyeSharp className='icon' onClick={() => openModal(products)} />
               </div>
               <div className='card-desc'>
-                <p>{product.category}</p>
-                <h6>{product.name}</h6>
-                <p>{product.price}</p>
-              
+                <p>{products.title}</p>
+                <h6>{products.name}</h6>
+                <p>${products.price}</p>
+    
               </div>
             </div>
           ))}
@@ -161,19 +62,19 @@ function Our() {
 
             <div className='first'>
                     <div className='firstimg'>
-                    <img src={selectedProduct.imgSrc} alt={selectedProduct.name} />
+                        <img src={detail.img}alt="" />
                     </div>
                     <div className='firstdes'>
                         <div className='des1'>
                             <div>
-                            <p>{selectedProduct.category}</p>
+                                <p>{detail.title}</p>
                             </div>
-                          
+                            
                         </div>
                         <div className='des2'>
-                        <h6>{selectedProduct.name}</h6>
-                        <p>{selectedProduct.price}</p> 
-                            <p>{selectedProduct.description}</p> 
+                            <h6>{detail.name}</h6>
+                            <p className='price'>£{detail.price     }</p>
+                            <p>{detail.description}</p>
                         </div>
                         <div className='des3'>
                             <div className='span'>
@@ -185,14 +86,13 @@ function Our() {
                                 <button>Add to cart</button>
                             </div>
                         </div>
-                    
                         <hr />
                         <div className='des4'>
                             <div>
-                                <p>category:</p>
+                                <p>category:{detail.category}</p>
                             </div>
                             <div>
-                                <p>tags:</p>
+                                <p>tags:{detail.tags}</p>
                             </div>
                         </div>
                     </div>

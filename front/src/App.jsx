@@ -11,14 +11,14 @@ import axios from 'axios'
 function App() {
   const [card, setCard] = useState([])
   const [logo,setLogo]=useState([])
+  const [product,setProduct]=useState([])
   const [original, setOriginal] = useState([])
   const [filtering, setFiltering] = useState([])
+
   useEffect(() => {
     axios.get('http://localhost:5050/card').then((res) => {
       setCard(res.data)
-      setOriginal(res.data)
-      setFiltering(res.data)
-
+ 
     })
   }, [])
 
@@ -30,12 +30,22 @@ function App() {
   }, [])
 
 
+  useEffect(() => {
+    axios.get('http://localhost:5050/product').then((res) => {
+      setProduct(res.data)
+    
+ 
+    })
+  }, [])
+
+
+
+
   const deleteCard= async (id) => {
     await axios.delete(`http://localhost:5050/card/${id}`).then(() => {
       const filtering = card.filter(item => item._id != id)
       setCard(filtering)
-      setOriginal(res.data)
-      setFiltering(res.data)
+  
      
 
     })
@@ -73,7 +83,7 @@ function App() {
 
 
   const values = {
-    card, setCard, deleteCard,setLogo,logo,deletetLogo,searchingData
+    card, setCard, deleteCard,setLogo,logo,deletetLogo,searchingData,setProduct,product
   }
 
 

@@ -2,6 +2,7 @@ import React from 'react'
 import './Register.scss'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 function Registerr() {
     
     const formik = useFormik({
@@ -89,9 +90,12 @@ function Registerr() {
     
         <div className='iba'>
    
-       <button type="submit">Log in</button>
+       <button type="submit">Register</button>
+      
        <a className='lost'>Lost your password?</a>
+       <Link to="/login"> login</Link>
         </div>
+
      </form>
        </div>
     

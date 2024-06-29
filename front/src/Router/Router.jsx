@@ -68,8 +68,8 @@ const ROUTES=[
                 element:<Basket/>
             },
             {
-                path:"shopdetail",
-                element:<ShopDetail/>
+                path: "/:id",
+                element: <ShopDetail />
             },
             {
                 path: '*',
