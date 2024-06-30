@@ -10,12 +10,12 @@ import axios from 'axios';
 function Shopdetail() {
     const { id } = useParams()
 
-  const [detail, setDetail] = useState({})
-  useEffect(() => {
-    axios.get(`http://localhost:5050/product/${id}`).then(res => {
-      setDetail(res.data);
-    });
-  }, [id]);
+    const [detail, setDetail] = useState({})
+    useEffect(() => {
+        axios.get(`http://localhost:5050/product/${id}`).then(res => {
+            setDetail(res.data);
+        });
+    }, []);
 
     const [activeTab, setActiveTab] = useState('description');
     const lineRef = useRef(null);
@@ -41,14 +41,14 @@ function Shopdetail() {
             <div className='shopdetail'>
                 <div className='first'>
                     <div className='firstimg'>
-                        <img src={detail.img}alt="" />
+                        <img src={detail.img} alt="" />
                     </div>
                     <div className='firstdes'>
                         <div className='des1'>
                             <div>
                                 <p>{detail.title}</p>
                             </div>
-                          
+
                         </div>
                         <div className='des2'>
                             <h6>{detail.name}</h6>
@@ -68,10 +68,15 @@ function Shopdetail() {
                         <hr />
                         <div className='des4'>
                             <div>
-                                <p>category:{detail.category}</p>
+                                <p>category: {detail.category?.title}</p>
                             </div>
                             <div>
-                                <p>tags:{detail.tags}</p>
+                                <p>tags: {
+                                    detail.tags?.map((tag, index) => (
+                                        <span className='mr-2' key={index}>{tag.title}</span>
+                                    ))
+                                }
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -116,11 +121,11 @@ function Shopdetail() {
                                 </div>
                                 <div className='rawtwo'>
                                     <p>Your rating *
-                                    <FaRegStar />
-                                    <FaRegStar />
-                                    <FaRegStar />
-                                    <FaRegStar />
-                                    <FaRegStar />
+                                        <FaRegStar />
+                                        <FaRegStar />
+                                        <FaRegStar />
+                                        <FaRegStar />
+                                        <FaRegStar />
                                     </p>
                                 </div>
                                 <div className='rewthree'>
@@ -206,7 +211,7 @@ function Shopdetail() {
                 </div>
             </div>
         </section>
-    );
+    )
 }
 
 export default Shopdetail;

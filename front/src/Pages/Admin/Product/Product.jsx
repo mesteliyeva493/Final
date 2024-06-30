@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import mainContext from '../../../Context/Context';
 import { Button } from '@mui/material';
 function Product() {
-    const { product } = useContext(mainContext);
+    const { product,deletetProduct } = useContext(mainContext);
 
     return (
         <>
@@ -40,7 +40,9 @@ function Product() {
                                 <TableCell align="right">{item.name}</TableCell>
                                 <TableCell align="right">{item.title}</TableCell>
                                 <TableCell align="right">{item.price}</TableCell>
-                                <TableCell align="right">  <Button>Delete</Button></TableCell>
+                                <TableCell align="right">  <Button onClick={()=>{
+                                    deletetProduct(item._id)
+                                }}>Delete</Button></TableCell>
 
                                 <TableCell align="right"><Button>Edit</Button></TableCell>
 

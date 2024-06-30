@@ -33,8 +33,6 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:5050/product').then((res) => {
       setProduct(res.data)
-    
- 
     })
   }, [])
 
@@ -60,6 +58,17 @@ function App() {
     })
   }
 
+  
+  const deletetProduct = async (id) => {
+    await axios.delete(`http://localhost:5050/product/${id}`).then(() => {
+      const filtering = logo.filter(item => item._id != id)
+      setProduct(filtering)
+     
+
+    })
+  }
+
+
 
   const searchingData = (e) => {
 
@@ -83,7 +92,7 @@ function App() {
 
 
   const values = {
-    card, setCard, deleteCard,setLogo,logo,deletetLogo,searchingData,setProduct,product
+    card, setCard, deleteCard,setLogo,logo,deletetLogo,searchingData,setProduct,product,deletetProduct
   }
 
 

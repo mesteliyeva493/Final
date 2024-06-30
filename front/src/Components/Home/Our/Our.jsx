@@ -111,6 +111,8 @@ import { FaShoppingBag } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import mainContext from '../../../Context/Context';
 import { basketc } from '../../../Context/Basketc';
+import ShopDetail from './../../../Pages/Client/ShopDetail/ShopDetail';
+import Product from './../../../Pages/Admin/Product/Product';
 
 function Our() {
   const { addBasket } = useContext(basketc);
@@ -137,8 +139,10 @@ function Our() {
         </div>
         <div className="productC">
           {product.slice(0, 4).map((products, index) => (
-            <div key={index} className="card">
-              <img src={products.img} alt={products.name} />
+            <div key={index} className="card"  >
+              <a href={'/shopdetail/' + products._id}>
+                <img src={products.img} alt={products.name} />
+              </a>
               <div className='overlay'>
                 <FaShoppingBag className='icon' onClick={() => addBasket(products)} />
                 <IoEyeSharp className='icon' onClick={() => openModal(products)} />
@@ -184,10 +188,14 @@ function Our() {
                 <hr />
                 <div className='des4'>
                   <div>
-                    <p>Category: {selectedProduct.category}</p>
+                    <p>Category: {selectedProduct.category.title}</p>
                   </div>
                   <div>
-                    <p>Tags: {Array.isArray(selectedProduct.tags) ? selectedProduct.tags.join(', ') : ''}</p>
+                    <p>Tags:
+                      {selectedProduct.tags?.map((tag, index) => (
+                        <span className='mr-2' key={index}>{tag.title}</span>
+                      ))}
+                    </p>
                   </div>
                 </div>
               </div>

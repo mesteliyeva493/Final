@@ -69,7 +69,7 @@ const ROUTES=[
                 element:<Basket/>
             },
             {
-                path: "shopdetail",
+                path: "shopdetail/:id",
                 element: <ShopDetail />
             },
             {

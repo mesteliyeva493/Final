@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import './Add.scss'
 
-import Addlogo from '../../../Components/Add/Addlogo';
-import Addcard from '../../../Components/Add/Addcard';
+import Addlogo from '../../../Components/Add/Addlogo/Addlogo';
+import Addcard from '../../../Components/Add/Addcard/Addcard';
+import Addproduct from '../../../Components/Add/Addproduct/Addproduct';
 
 
 function Add() {
@@ -22,10 +23,10 @@ function Add() {
             logo
           </div>
           <div className={`tab-label ${activeTab === 1 ? 'active' : ''}`} onClick={() => handleTabClick(1)}>
-            Tab 2
+            card
           </div>
           <div className={`tab-label ${activeTab === 2 ? 'active' : ''}`} onClick={() => handleTabClick(2)}>
-            Tab 3
+            prooduct
           </div>
         </div>
 
@@ -39,7 +40,9 @@ function Add() {
           {activeTab === 1 && <div className="content"> 
             <Addcard/>
           </div>}
-          {activeTab === 2 && <div className="content">This is content for Tab 3.</div>}
+          {activeTab === 2 && <div className="content">
+            <Addproduct/>
+            </div>}
         </div>
       </div>
 
