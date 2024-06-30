@@ -30,14 +30,43 @@
         @media (max-width: 320px) {
             padding: 0px;
         }
-
         .basket {
             width: 70%;
 
             @media (max-width: 768px) {
                 width: 100%;
             }
+
+            .table-responsive {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    th,
+                    td {
+                        border: none;
+                        padding: 8px;
+                        text-align: center;
+                    }
+
+                    img {
+                        width: 60px;
+                    }
+                }
+            }
+        
       .table-bordered{
+        .table-responsive {
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                th,
+                td {
+                    border: none ; 
+                    padding: 8px;
+                    text-align: center;
+                }}}
       
         img{
             width: 60px;
@@ -48,14 +77,13 @@
         
 
         .cardtotal {
-            border: 1px solid #abb8c3;
             width: 25%;
-
             @media (max-width: 768px) {
                 width: 100%;
             }
 
             .list2 {
+
                 ul {
                     li {
                         display: flex;
@@ -176,6 +204,7 @@
                 .list2 {
                     ul {
                         li {
+                            
                             button {
                                 padding: 8px 15px;
                             }
@@ -200,8 +229,15 @@
         }
     }
 }
-@media (max-width: 390px) {
-   .table{
-    border: 3px solid green !important;
-   }
+.span2 {
+    margin-top: 8px;
+    span{
+        cursor: pointer;
+        color: rgba(85, 85, 85, 0.944);
+        padding:8px 9px;
+        background-color: transparent;
+        border: 1px solid rgba(118, 115, 115, 0.594);
     }
+  }
+
+

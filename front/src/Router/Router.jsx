@@ -1,6 +1,7 @@
 import Add from "../Pages/Admin/Add/Add";
 import AdminRoot from "../Pages/Admin/AdminRoot";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
+import Product from "../Pages/Admin/Product/Product";
 import AboutUs from "../Pages/Client/About us/AboutUs";
 import Basket from "../Pages/Client/Basket/Basket";
 import CheckOut from "../Pages/Client/CheckOut/CheckOut";
@@ -68,7 +69,7 @@ const ROUTES=[
                 element:<Basket/>
             },
             {
-                path: "/:id",
+                path: "shopdetail",
                 element: <ShopDetail />
             },
             {
@@ -90,8 +91,12 @@ const ROUTES=[
                 path:"add",
                 element:<Add/>
   
-               
-            }
+            },
+           {
+            path: "product",
+            element: <Product/>
+           }
+        
         ]
     }
 ]

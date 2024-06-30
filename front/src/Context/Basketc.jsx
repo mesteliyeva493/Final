@@ -48,9 +48,13 @@ function BasketContextProvider({ children }) {
         setBasket([...basket])
         localStorage.setItem("basket", JSON.stringify([...basket]))
     }
-
+    const calculateSubtotal = () => {
+        return basket.reduce((total, item) => {
+            return total + item.totalPrice;
+        }, 0);
+    };
     const values = {
-        basket, addBasket, deletedBasket, decrease, increase
+        basket, addBasket, deletedBasket, decrease, increase,calculateSubtotal
     }
     return (
         <basketc.Provider value={values}>{children}

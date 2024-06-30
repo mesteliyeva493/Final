@@ -15,7 +15,7 @@ function Shopdetail() {
     axios.get(`http://localhost:5050/product/${id}`).then(res => {
       setDetail(res.data);
     });
-  }, []);
+  }, [id]);
 
     const [activeTab, setActiveTab] = useState('description');
     const lineRef = useRef(null);
@@ -41,19 +41,19 @@ function Shopdetail() {
             <div className='shopdetail'>
                 <div className='first'>
                     <div className='firstimg'>
-                        {/* <img src={detail.img}alt="" /> */}
+                        <img src={detail.img}alt="" />
                     </div>
                     <div className='firstdes'>
                         <div className='des1'>
                             <div>
-                                {/* <p>{detail.title}</p> */}
+                                <p>{detail.title}</p>
                             </div>
                           
                         </div>
                         <div className='des2'>
-                            {/* <h6>{detail.name}</h6> */}
-                            {/* <p className='price'>£{detail.price     }</p> */}
-                            {/* <p>{detail.description}</p> */}
+                            <h6>{detail.name}</h6>
+                            <p className='price'>£{detail.price}</p>
+                            <p>{detail.description}</p>
                         </div>
                         <div className='des3'>
                             <div className='span'>
@@ -68,10 +68,10 @@ function Shopdetail() {
                         <hr />
                         <div className='des4'>
                             <div>
-                                {/* <p>category:{detail.category}</p> */}
+                                <p>category:{detail.category}</p>
                             </div>
                             <div>
-                                {/* <p>tags:{detail.tags}</p> */}
+                                <p>tags:{detail.tags}</p>
                             </div>
                         </div>
                     </div>

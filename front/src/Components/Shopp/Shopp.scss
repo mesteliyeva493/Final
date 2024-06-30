@@ -102,15 +102,23 @@
           border: none;
           width: 150px;
           transition: 0.2s;
+          border: 2px solid #5b6f18;
+
 
           &:hover {
-            border: 1px solid rgba(0, 0, 0, 0);
+            border: 1px solid rgba(13, 186, 143, 0.635);
           }
 
           select {
             width: 100%;
             padding: 5px;
             font-size: 16px;
+            color: #5b6f18;
+
+            option{
+            color: #5b6f18;
+       
+            }
           }
         }
       }
@@ -682,7 +690,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  margin-top: 40px;
+  margin-top: 25px;
 
   h5 {
     font-family: 'Playfair Display', serif;
@@ -746,27 +754,39 @@
   }
 
   .cat {
-    margin-top: 20px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
-  }
+    .productlist {
 
-  .productlist {
+    
+        list-style: none;
+      
+        li {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
 
-    ul {
-      list-style: none;
-
-      li {
-        a {
-          color: #a3ce18;
-          text-decoration: none;
+         .count{
+          display: flex;
+          flex-direction: row;
+          gap: 2px;
+          .cate{
+            color:#a3ce18 ;
+          }
+          p{
+            color:black;
+            list-style: none; }
+  
+         }
+         
         }
-
-        display: flex;
       }
-    }
+    
+  
   }
 
+ 
   .recently {
     width: 100%;
     display: flex;

@@ -11,6 +11,7 @@ function Header() {
           <h1>Ayur Veda</h1>
           <Link to='/admin' Link className="nav-link"><i className="fa fa-dashboard"></i><span>Dashboard </span></Link>
           <Link to='/admin/add' Link className="nav-link"><i className="fa fa-dashboard"></i><span>Add </span></Link>
+          <Link to='/admin/product' Link className="nav-link"><i className="fa fa-dashboard"></i><span>Product </span></Link>
         </div>
       </nav>
     </div>

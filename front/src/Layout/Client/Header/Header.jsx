@@ -1,16 +1,15 @@
-import React, { useState, lineRef, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { IoIosClose } from "react-icons/io";
-
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import './Header.scss';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { basketc } from '../../../Context/Basketc';
 import mainContext from '../../../Context/Context';
+import './Header.scss';
 
 function Header() {
-  const {basket,decrease,increase,deletedBasket,addBasket}=useContext(basketc)
-  const {product}=useContext(mainContext)
+  const { basket, decrease, increase, deletedBasket, calculateSubtotal } = useContext(basketc);
+  const { product } = useContext(mainContext);
   const [showCart, setShowCart] = useState(false);
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
@@ -34,92 +33,82 @@ function Header() {
             </div>
             <div className="col-lg-6 col-6 d-lg-flex d-none justify-content-end align-items-center">
               <ul className="nav-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="aboutus">About Us</Link></li>
-                <li><Link to="shop">Shop</Link></li>
+                <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
+                <li><NavLink to="/aboutus" activeClassName="active">About Us</NavLink></li>
+                <li><NavLink to="/shop" activeClassName="active">Shop</NavLink></li>
                 <li className='dropdown-container'>
-                  <Link to="myaccount">My Account</Link>
+                  <NavLink to="/myaccount" activeClassName="active">My Account</NavLink>
                   <ul className='dropdown'>
-                    {/* <li>
-                      <Link to="orders">Orders</Link>
+                    <li>
+                      <NavLink to="/login" activeClassName="active">Login</NavLink>
                     </li>
                     <li>
-                      <Link to="accountdetail">Account Detail</Link>
-                    </li> */}
-                    <li>
-                      <Link to="login">Login</Link>
-                    </li>
-                    <li>
-                      <Link to="register">Register</Link>
+                      <NavLink to="/register" activeClassName="active">Register</NavLink>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link to="contactus">Contact Us</Link>
-                </li>
-                <li>
-                  <Link to="checkout">Checkout</Link>
-                </li>
-                <li>
-                  <Link to="basket">Basket</Link>
+                  <NavLink to="/contactus" activeClassName="active">Contact Us</NavLink>
                 </li>
                 <li className='basket'>
-                  <span className='e' onClick={toggleCart}>£0.00</span>
+                  <span className='e' onClick={toggleCart}>£{calculateSubtotal().toFixed(2)}</span>
                   <LiaShoppingBagSolid className='basket' onClick={toggleCart} />
+              
+                  {basket.length > 0 && (
+                     <span className="badge">{basket.length}</span>
+                  )}
                 </li>
               </ul>
             </div>
-
             <div className="col-6 d-lg-none d-flex justify-content-end hamburger-menu">
-              <button className="btn btn-primary " type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop1" aria-controls="offcanvasTop1"><RxHamburgerMenu />
+              <button className="btn btn-primary" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop1" aria-controls="offcanvasTop1">
+                <RxHamburgerMenu />
               </button>
-
             </div>
-
           </div>
         </div>
       </header>
-      <div style={{ zIndex: "23333333333333", height: "inherit" }} className="offcanvas resOff offcanvas-top" tabindex="-1" id="offcanvasTop1" aria-labelledby="offcanvasTopLabel">
+
+      <div style={{ zIndex: "23333333333333", height: "inherit" }} className="offcanvas resOff offcanvas-top" tabIndex="-1" id="offcanvasTop1" aria-labelledby="offcanvasTopLabel">
         <div className="offcanvas-header">
           <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body">
           <ul>
-            <li className='navbar'><Link to="/" data-bs-dismiss="offcanvas">Home</Link></li>
+            <li className='navbar'><NavLink exact to="/" data-bs-dismiss="offcanvas" activeClassName="active">Home</NavLink></li>
             <hr />
-            <li className='navbar'><Link to="aboutus" data-bs-dismiss="offcanvas">About Us</Link></li>
+            <li className='navbar'><NavLink to="/aboutus" data-bs-dismiss="offcanvas" activeClassName="active">About Us</NavLink></li>
             <hr />
-            <li className='navbar'><Link to="shop" data-bs-dismiss="offcanvas">Shop</Link></li>
+            <li className='navbar'><NavLink to="/shop" data-bs-dismiss="offcanvas" activeClassName="active">Shop</NavLink></li>
             <hr />
-            <li className='dropdown-container'><Link to="myaccount" data-bs-dismiss="offcanvas">My Account</Link>
+            <li className='dropdown-container'>
+              <NavLink to="/myaccount" data-bs-dismiss="offcanvas" activeClassName="active">My Account</NavLink>
               <ul className='dropdown2'>
                 <li>
-                  <Link to="orders">Orders</Link>
+                  <NavLink to="/orders" activeClassName="active">Orders</NavLink>
                 </li>
                 <li>
-                  <Link to="accountdetail">Account Detail</Link>
+                  <NavLink to="/accountdetail" activeClassName="active">Account Detail</NavLink>
                 </li>
               </ul>
             </li>
             <hr />
-            <li className='navbar'><Link to="contactus" data-bs-dismiss="offcanvas">Contact Us</Link></li>
+            <li className='navbar'><NavLink to="/contactus" data-bs-dismiss="offcanvas" activeClassName="active">Contact Us</NavLink></li>
             <hr />
-            <li className='navbar'><Link to="basket" data-bs-dismiss="offcanvas"><LiaShoppingBagSolid /></Link></li>
+            <li className='navbar'><NavLink to="/basket" data-bs-dismiss="offcanvas" activeClassName="active"><LiaShoppingBagSolid /></NavLink></li>
           </ul>
-
         </div>
       </div>
 
-  
       <div className={`offcanvas offcanvas-end ${showCart ? 'show' : ''}`} tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header">
           <p id="offcanvasRightLabel">Shopping Cart</p>
           <button type="button" className="btn-close text-reset" onClick={toggleCart} aria-label="Close"></button>
         </div>
-        <div ref={lineRef} className='line'></div>
+        <div className='line'></div>
         <div className="offcanvas-body">
-        {basket.map((products) => (
+          {basket.map((products) => (
             <div key={products.product.id}>
               <div className='basketimg'>
                 <img src={products.product.img} alt="" />
@@ -130,9 +119,7 @@ function Header() {
                     <p>{products.product.title}</p>
                   </div>
                   <div>
-                    <button onClick={()=>{
-                      deletedBasket(products._id)
-                    }}><IoIosClose /></button>
+                    <button onClick={() => deletedBasket(products._id)}><IoIosClose /></button>
                   </div>
                 </div>
                 <div className='desc2'>
@@ -142,36 +129,30 @@ function Header() {
                     <span onClick={() => increase(products)}>+</span>
                   </div>
                   <div>
-                    <p>{products.product.price}</p>
+                    <p>${products.product.price}</p>
                   </div>
                 </div>
               </div>
             </div>
           ))}
-          
-          
         </div>
-        <div ref={lineRef} className='line'></div>
+        <div className='line'></div>
         <div className="offcanvas-footer">
           <div className='sup'>
             <div>
-              <p>Subtotal:
-              </p>
+              <p>Subtotal:</p>
             </div>
             <div>
-              $64.00
+              <p>$ {calculateSubtotal().toFixed(2)}</p>
             </div>
-            
           </div>
-          <div ref={lineRef} className='line'></div>
+          <div className='line'></div>
           <div className='basketbutton'>
-           <Link to="basket">    <button >view card</button></Link>
-             <Link to="checkout"><button >checkout</button></Link>
-             <Link to="shop"> <button>
-              Continue Shopping</button></Link>
+            <NavLink to="/basket"><button>View Cart</button></NavLink>
+            <NavLink to="/checkout"><button>Checkout</button></NavLink>
+            <NavLink to="/shop"><button>Continue Shopping</button></NavLink>
           </div>
         </div>
-
       </div>
     </>
   );
