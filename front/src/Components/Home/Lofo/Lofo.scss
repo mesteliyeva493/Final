@@ -6,7 +6,6 @@
 }
 
 #lofo {
-  
     background: linear-gradient(rgba(255, 255, 255, 0.613), rgba(255, 255, 255, 0.732)),  url("https://websitedemos.net/ayurveda-04/wp-content/uploads/sites/189/2018/04/pic03-free-img.png");
     background-repeat: no-repeat;
     background-position: top;
@@ -18,7 +17,15 @@
     align-items: center;
     background-size: cover;
 
-
+    @media (max-width: 576px) {
+        padding: 0px ;
+        }
+        @media (min-width: 576px) and (max-width: 767px){
+            padding: 0px ;
+        }
+        @media (min-width: 768px) and (max-width: 1024px){
+            padding: 0px ;
+         }
     .card-custom {
         min-width: 200px;
         .card-body{
@@ -33,7 +40,7 @@
                 @media (min-width: 576px) and (max-width: 767px){
                    height: 300px;
                 }
-                @media (min-width: 768px) and (max-width: 1024px){
+                @media (min-width: 768px) and (max-width: 1400px){
                     height: auto;
                  }
              .cardimg{

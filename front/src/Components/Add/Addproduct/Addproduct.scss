@@ -31,7 +31,7 @@
 
         &:focus {
             outline: none;
-            border-color: #789b03;
+            border-color: #5F021F;
             box-shadow: 0 0 5px rgba(120, 155, 3, 0.5);
         }
     }
@@ -47,7 +47,7 @@
     }
 
     button[type="submit"] {
-        background-color: #789b03;
+        background-color: #5F021F;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -57,7 +57,7 @@
         margin-top: 10px;
 
         &:hover {
-            background-color: #678a02;
+            background-color: #181818;
         }
     }
 }

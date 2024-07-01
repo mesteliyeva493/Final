@@ -1,71 +1,101 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
+}
+
+#pdd {
+  padding: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+
+  @media (max-width: 768px) {
+    padding: 0;
   }
-  
-  #pdd {
-    padding: 80px; 
+}
+
+.card-container {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+
+  @media (max-width: 768px) {
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; 
-  
+}
+
+.cardPddd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+
   }
 
   .cardPdd {
+    width: 34%;
 
-   width: 400px;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
+  }
+}
 
+
+.imgpdd {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cardp {
+  text-align: center;
+
+  h5 {
+    font-weight: 800;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
 
   }
-  
-  .imgpdd {
-    text-align: center;
-    margin-bottom: 20px;
+
+  p {
+    color: rgb(99, 99, 99);
+    font-size: 15px;
   }
-  
+}
+
+@media (max-width: 768px) {
   .cardp {
-    text-align: center;
-    h5{
-        font-weight: 800;
-        font-size: 30px;
-        font-family: 'Playfair Display', serif;
+    h5 {
+      font-weight: 600;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
 
     }
-    p{
-        color:  rgb(99, 99, 99);
-        font-size: 15px;
+
+    p {
+      color: rgb(99, 99, 99);
+      font-size: 15px;
     }
   }
-  
-  @media  (max-width: 768px) {
-    .cardp {
-        h5{
-            font-weight: 600;
-            font-size: 24px;
-            font-family: 'Playfair Display', serif;
-    
-        }
-        p{
-            color:  rgb(99, 99, 99);
-            font-size: 15px;
-        }
-    }
-  }
-  
+}
 
-  @media (max-width:450px){
-    .cardPdd {
 
-      width: 100px;
-   
-   
-     }
+@media (max-width:450px) {
+  .cardPdd {
+
+    width: 100px;
+
+
   }
+}

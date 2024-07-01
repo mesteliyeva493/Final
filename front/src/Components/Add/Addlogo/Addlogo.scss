@@ -29,13 +29,13 @@
   
       &:focus {
         outline: none;
-        border-color: #789b03;
-        box-shadow: 0 0 5px rgba(120, 155, 3, 0.5);
+        border-color: #5F021F;
+        box-shadow: 0 0 5px rgba(155, 69, 3, 0.5);
       }
     }
   
     button[type="submit"] {
-      background-color: #789b03;
+      background-color: #5F021F;
       color: #fff;
       border: none;
       padding: 10px 20px;
@@ -44,7 +44,7 @@
       cursor: pointer;
   
       &:hover {
-        background-color: #678a02;
+        background-color: #181818;
       }
     }
   

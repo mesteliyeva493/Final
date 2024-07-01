@@ -1,110 +1,3 @@
-
-// import React, { useContext, useState } from 'react';
-// import './Our.scss';
-// import { Link } from 'react-router-dom';
-// import { FaShoppingBag } from "react-icons/fa";
-// import { IoEyeSharp } from "react-icons/io5";
-// import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-// import mainContext from '../../../Context/Context';
-// import { basketc } from '../../../Context/Basketc';
-
-
-
-// function Our() {
-//   const { addBasket } = useContext(basketc)
-//   const { product } = useContext(mainContext)
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [selectedProduct, setSelectedProduct] = useState(null);
-
-//   const openModal = (product) => {
-//     setSelectedProduct(product);
-//     setIsModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//     setSelectedProduct(null);
-//   };
-
-//   return (
-//     <section id='our'>
-//       <div className='container'>
-//         <div className='our'>
-//           <h2>Our Recent Products!</h2>
-//         </div>
-//         <div className="productC">
-//           {product.slice(0, 4).map((products, index) => (
-//             <div key={index} className="card">
-//               {/* <Link to={`/shopdetail${products._id}`}>
-//               </Link> */}
-//               <img src={products.img} alt={products.name} />
-
-//               <div className='overlay'>
-//                 <FaShoppingBag className='icon' onClick={() => {
-//                   addBasket(products)
-//                 }} />
-//                 <IoEyeSharp className='icon' onClick={() => openModal(products)} />
-//               </div>
-//               <div className='card-desc'>
-//                 <p>{products.title}</p>
-//                 <h6>{products.name}</h6>
-//                 <p>${products.price}</p>
-
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//       {isModalOpen && selectedProduct && (
-//         <div className="modal">
-//           <div className="modal-content">
-//             <span className="close" onClick={closeModal}>&times;</span>
-
-//             <div className='first'>
-//               <div className='firstimg'>
-//                 <img src={selectedProduct.img} alt="" />
-//               </div>
-//               <div className='firstdes'>
-//                 <div className='des1'>
-//                   <div>
-//                     <p>{selectedProduct.title}</p>
-//                   </div>
-
-//                 </div>
-//                 <div className='des2'>
-//                   <h6>{selectedProduct.name}</h6>
-//                   <p className='price'>£{selectedProduct.price}</p>
-//                   <p>{selectedProduct.description}</p>
-//                 </div>
-//                 <div className='des3'>
-//                   <div className='span'>
-//                     <span>-</span>
-//                     <span>1</span>
-//                     <span>+</span>
-//                   </div>
-//                   <div>
-//                     <button>Add to cart</button>
-//                   </div>
-//                 </div>
-//                 <hr />
-//                 <div className='des4'>
-//                   <div>
-//                     <p>category:{selectedProduct.category}</p>
-//                   </div>
-//                   <div>
-//                     <p>tags:{selectedProduct.tags}</p>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </section>
-//   );
-// }
-
-// export default Our;
 import React, { useContext, useState } from 'react';
 import './Our.scss';
 import { FaShoppingBag } from "react-icons/fa";
@@ -115,7 +8,7 @@ import ShopDetail from './../../../Pages/Client/ShopDetail/ShopDetail';
 import Product from './../../../Pages/Admin/Product/Product';
 
 function Our() {
-  const { addBasket } = useContext(basketc);
+  const { addBasket, decrease, increase } = useContext(basketc);
   const { product } = useContext(mainContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -177,12 +70,12 @@ function Our() {
                 </div>
                 <div className='des3'>
                   <div className='span'>
-                    <span>-</span>
-                    <span>1</span>
-                    <span>+</span>
+                    <span onClick={() => decrease(selectedProduct)}>-</span>
+                    <span>{selectedProduct.count}</span>
+                    <span onClick={() => increase(selectedProduct)}>+</span>
                   </div>
                   <div>
-                    <button>Add to cart</button>
+                    <button onClick={() => addBasket(selectedProduct)} >Add to cart</button>
                   </div>
                 </div>
                 <hr />

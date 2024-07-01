@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { IoIosClose } from "react-icons/io";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { basketc } from '../../../Context/Basketc';
@@ -76,27 +76,27 @@ function Header() {
         </div>
         <div className="offcanvas-body">
           <ul>
-            <li className='navbar'><NavLink exact to="/" data-bs-dismiss="offcanvas" activeClassName="active">Home</NavLink></li>
+            <li className='navbar'><Link exact to="/" data-bs-dismiss="offcanvas" activeClassName="active">Home</Link></li>
             <hr />
-            <li className='navbar'><NavLink to="/aboutus" data-bs-dismiss="offcanvas" activeClassName="active">About Us</NavLink></li>
+            <li className='navbar'><Link to="/aboutus" data-bs-dismiss="offcanvas" activeClassName="active">About Us</Link></li>
             <hr />
-            <li className='navbar'><NavLink to="/shop" data-bs-dismiss="offcanvas" activeClassName="active">Shop</NavLink></li>
+            <li className='navbar'><Link to="/shop" data-bs-dismiss="offcanvas" activeClassName="active">Shop</Link></li>
             <hr />
             <li className='dropdown-container'>
-              <NavLink to="/myaccount" data-bs-dismiss="offcanvas" activeClassName="active">My Account</NavLink>
+              <Link to="/myaccount" data-bs-dismiss="offcanvas" activeClassName="active">My Account</Link>
               <ul className='dropdown2'>
                 <li>
-                  <NavLink to="/orders" activeClassName="active">Orders</NavLink>
+                  <Link to="/orders" activeClassName="active">Orders</Link>
                 </li>
                 <li>
-                  <NavLink to="/accountdetail" activeClassName="active">Account Detail</NavLink>
+                  <Link to="/accountdetail" activeClassName="active">Account Detail</Link>
                 </li>
               </ul>
             </li>
             <hr />
-            <li className='navbar'><NavLink to="/contactus" data-bs-dismiss="offcanvas" activeClassName="active">Contact Us</NavLink></li>
+            <li className='navbar'><Link to="/contactus" data-bs-dismiss="offcanvas" activeClassName="active">Contact Us</Link></li>
             <hr />
-            <li className='navbar'><NavLink to="/basket" data-bs-dismiss="offcanvas" activeClassName="active"><LiaShoppingBagSolid /></NavLink></li>
+            <li className='navbar'><Link to="/basket" data-bs-dismiss="offcanvas" activeClassName="active"><LiaShoppingBagSolid /></Link></li>
           </ul>
         </div>
       </div>

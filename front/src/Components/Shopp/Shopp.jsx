@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Range, getTrackBackground } from 'react-range';
 import { FiList, FiGrid } from 'react-icons/fi';
 import { FaAngleRight } from 'react-icons/fa';
@@ -13,10 +13,27 @@ function Shopp() {
   const { baddBasket } = useContext(basketc);
   const [column, setColumn] = useState(true);
   const [showFilter, setShowFilter] = useState(false);
-  const [value, setValue] = useState([0, 100]);
+  const [value, setValue] = useState([0, 1000]); 
   const { addBasket } = useContext(basketc);
   const [data, setData] = useState(allProducts);
   const [sortType, setSortType] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  useEffect(() => {
+    setData(allProducts);
+  }, [allProducts]);
+
+  const openModal = (product) => {
+    console.log('Opening modal for product:', product);
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
 
   const toggleFilter = () => {
     setShowFilter(!showFilter);
@@ -28,10 +45,6 @@ function Shopp() {
 
   const MIN = 0;
   const MAX = 1000;
-
-  const openModal = (product) => {
-    console.log("Opening modal for product:", product);
-  };
 
   const searchingData = (e) => {
     const searchedData = e.target.value.trim().toLowerCase();
@@ -75,7 +88,6 @@ function Shopp() {
         sortedData.sort((a, b) => b.price - a.price);
         break;
       default:
-
         break;
     }
     setData(sortedData);
@@ -121,7 +133,9 @@ function Shopp() {
               <div className='container'>
                 {data.map((product) => (
                   <div className='card' key={product.id}>
-                    <img src={product.img} alt='' />
+                    <a href={'/shopdetail/' + product._id}>
+                      <img src={product.img} alt='' />
+                    </a>
                     <div className='overlay'>
                       <FaShoppingBag onClick={() => addBasket(product)} className='icon' />
                       <IoEyeSharp className='icon' onClick={() => openModal(product)} />
@@ -140,10 +154,8 @@ function Shopp() {
                   <div className='card' key={product.id}>
                     <img src={product.img} alt='' />
                     <div className='overlay'>
-                      <FaShoppingBag className='icon' onClick={() => {
-                        addBasket(products)
-                      }} />
-                      <IoEyeSharp className='icon' onClick={() => openModal(products)} />
+                      <FaShoppingBag className='icon' onClick={() => addBasket(product)} />
+                      <IoEyeSharp className='icon' onClick={() => openModal(product)} />
                     </div>
                     <div className='p4'>
                       <p>{product.title}</p>
@@ -156,6 +168,49 @@ function Shopp() {
               </div>
             )}
           </div>
+          {isModalOpen && selectedProduct && (
+            <div className="modal">
+              <div className="modal-content">
+                <span className="close" onClick={closeModal}>&times;</span>
+                <div className='first'>
+                  <div className='firstimg'>
+                    <img src={selectedProduct.img} alt={selectedProduct.name} />
+                  </div>
+                  <div className='firstdes'>
+                    <div className='des1'>
+                      <p>{selectedProduct.title}</p>
+                    </div>
+                    <div className='des2'>
+                      <h6>{selectedProduct.name}</h6>
+                      <p className='price'>£{selectedProduct.price}</p>
+                      <p>{selectedProduct.description}</p>
+                    </div>
+                    <div className='des3'>
+                      <div className='span'>
+                        <span onClick={() => decrease(selectedProduct)}>-</span>
+                        <span>{selectedProduct.count}</span>
+                        <span onClick={() => increase(selectedProduct)}>+</span>
+                      </div>
+                      <div>
+                        <button onClick={() => addBasket(selectedProduct)}>Add to cart</button>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className='des4'>
+                      <div>
+                        <p>Category: {selectedProduct.category.title}</p>
+                      </div>
+                      <div>
+                        <p>Tags: {selectedProduct.tags?.map((tag, index) => (
+                          <span className='mr-2' key={index}>{tag.title}</span>
+                        ))}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
       <div
@@ -246,18 +301,18 @@ function Shopp() {
               <h5>Product Categories</h5>
               <ul className='productlist'>
                 <li>
-                 <div className='count'>
-                 <p className='cate' >tea</p>
-                  <p>(4)</p>
-                 </div>
-                 <div className='count'>
-                 <p className='cate' >oil</p>
-                  <p>(4)</p>
-                 </div>
-                 <div className='count'>
-                 <p className='cate' >essential oil</p>
-                  <p>(4)</p>
-                 </div>
+                  <div className='count'>
+                    <p className='cate' >tea</p>
+                    <p>(4)</p>
+                  </div>
+                  <div className='count'>
+                    <p className='cate' >oil</p>
+                    <p>(4)</p>
+                  </div>
+                  <div className='count'>
+                    <p className='cate' >essential oil</p>
+                    <p>(4)</p>
+                  </div>
                 </li>
               </ul>
             </div>
