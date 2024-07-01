@@ -310,78 +310,78 @@
                 }
             }
 
-            .payment {
-                .accordion-container {
-                    border-radius: 10px;
-                    display: flex;
-                    flex-direction: column;
-                    border-radius: 50px;
+            // .payment {
+            //     .accordion-container {
+            //         border-radius: 10px;
+            //         display: flex;
+            //         flex-direction: column;
+            //         border-radius: 50px;
 
 
-                }
+            //     }
 
-                .accordion-item {
-                    margin-bottom: 1em;
-
-
-
-                    input[type="radio"] {
-                        display: none;
-                        border: #777774 1px solid;
+            //     .accordion-item {
+            //         margin-bottom: 1em;
 
 
 
+            //         input[type="radio"] {
+            //             display: none;
+            //             border: #777774 1px solid;
 
-                    }
 
-                    label {
 
-                        display: block;
-                        padding: 10px;
-                        border: 1px solid #ccc;
-                        cursor: pointer;
 
-                        @media (max-width: 768px) {
-                            padding: 25px 10px;
-                        }
+            //         }
 
-                        .paypal {
-                            display: flex;
-                            flex-direction: row;
+            //         label {
 
-                            align-items: center;
+            //             display: block;
+            //             padding: 10px;
+            //             border: 1px solid #ccc;
+            //             cursor: pointer;
 
-                            p {
-                                text-decoration: none;
-                                color: #789B03;
-                                font-size: 15px;
-                            }
+            //             @media (max-width: 768px) {
+            //                 padding: 25px 10px;
+            //             }
 
-                            img {
-                                width: 20%;
+            //             .paypal {
+            //                 display: flex;
+            //                 flex-direction: row;
 
-                                @media (max-width: 768px) {
-                                    width: 60%;
-                                }
-                            }
-                        }
-                    }
+            //                 align-items: center;
 
-                    .accordion-content {
-                        padding: 10px;
-                        border: 1px solid #ccc;
-                        border-top: none;
-                        display: none;
-                        background: #789b0331;
+            //                 p {
+            //                     text-decoration: none;
+            //                     color: #789B03;
+            //                     font-size: 15px;
+            //                 }
 
-                    }
+            //                 img {
+            //                     width: 20%;
 
-                    input[type="radio"]:checked+label+.accordion-content {
-                        display: block;
+            //                     @media (max-width: 768px) {
+            //                         width: 60%;
+            //                     }
+            //                 }
+            //             }
+            //         }
 
-                    }
-                }
-            }
+            //         .accordion-content {
+            //             padding: 10px;
+            //             border: 1px solid #ccc;
+            //             border-top: none;
+            //             display: none;
+            //             background: #789b0331;
+
+            //         }
+
+            //         input[type="radio"]:checked+label+.accordion-content {
+            //             display: block;
+
+            //         }
+            //     }
+            // }
 
             .buttonpayment {
 

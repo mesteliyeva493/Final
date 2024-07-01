@@ -12,7 +12,7 @@ function Footer() {
                 <div className="Icons">
                     <a href=""><i><FaFacebook /></i></a>
                     <a href=""><i><FaTwitter /></i></a>
-                    <a href=""><i><FaInstagram /></i></a>
+                    <a href="https://www.instagram.com/ayvedda/"><i><FaInstagram /></i></a>
                     <a href=""><i><FaYoutube /></i></a>
                 </div>
                 <div className="footerBottom">

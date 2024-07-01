@@ -41,6 +41,7 @@ function Addproduct() {
         .required('Tags are required'),
     }),
     onSubmit: async (values, { resetForm }) => {
+      console.log('Form values:', values);
       try {
         const tagsArray = values.tags.split(',').map(tag => tag.trim());
         const productData = { ...values, tags: tagsArray };
@@ -50,9 +51,19 @@ function Addproduct() {
         resetForm(); 
       } catch (error) {
         console.error('Error adding product', error);
+        if (error.response) {
+          console.error('Response error:', error.response.data);
+        } else if (error.request) {
+          console.error('Request error:', error.request);
+        } else {
+          console.error('Error message:', error.message);
+        }
       }
     }
   });
+
+  console.log('Form state:', formik.values, formik.errors, formik.touched);
+  console.log('Context data:', data);
 
   return (
     <div className="add-product-container">
@@ -169,4 +180,3 @@ function Addproduct() {
 }
 
 export default Addproduct;
-

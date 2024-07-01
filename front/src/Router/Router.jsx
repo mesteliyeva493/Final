@@ -4,6 +4,7 @@ import Cardp from "../Pages/Admin/Card/Cardp";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import Logop from "../Pages/Admin/Logo/Logop";
 import Product from "../Pages/Admin/Product/Product";
+import User from "../Pages/Admin/User/User";
 import AboutUs from "../Pages/Client/About us/AboutUs";
 import Basket from "../Pages/Client/Basket/Basket";
 import CheckOut from "../Pages/Client/CheckOut/CheckOut";
@@ -106,6 +107,11 @@ const ROUTES = [
                 path: "card",
                 element: <Cardp />
             },
+            {
+                path: "user",
+                element: <User/>
+            }
+      
       
 
 

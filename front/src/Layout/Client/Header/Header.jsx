@@ -6,10 +6,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { basketc } from '../../../Context/Basketc';
 import mainContext from '../../../Context/Context';
 import './Header.scss';
+import toast from 'react-hot-toast';
 
 function Header() {
   const { basket, decrease, increase, deletedBasket, calculateSubtotal } = useContext(basketc);
-  const { product } = useContext(mainContext);
+  const { product, currentUser, setCurrentUser } = useContext(mainContext);
   const [showCart, setShowCart] = useState(false);
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
@@ -39,12 +40,32 @@ function Header() {
                 <li className='dropdown-container'>
                   <NavLink to="/myaccount" activeClassName="active">My Account</NavLink>
                   <ul className='dropdown'>
-                    <li>
-                      <NavLink to="/login" activeClassName="active">Login</NavLink>
-                    </li>
-                    <li>
-                      <NavLink to="/register" activeClassName="active">Register</NavLink>
-                    </li>
+                    {
+                      currentUser ? <>
+
+                        <li>
+                          <p>
+                            {currentUser?.username}
+                          </p>
+                        </li>
+                        <li>
+                          <button className='btn btn-danger' onClick={() => {
+                            localStorage.removeItem('token')
+                            setCurrentUser(null)
+                            toast.success('Successfully Logouted')
+                          }}>Logout</button>
+                        </li>
+                      </> : <>
+
+                        <li>
+                          <NavLink to="/login" activeClassName="active">Login</NavLink>
+                        </li>
+                        <li>
+                          <NavLink to="/register" activeClassName="active">Register</NavLink>
+                        </li>
+                      </>
+                    }
+
                   </ul>
                 </li>
                 <li>
@@ -53,9 +74,9 @@ function Header() {
                 <li className='basket'>
                   <span className='e' onClick={toggleCart}>£{calculateSubtotal().toFixed(2)}</span>
                   <LiaShoppingBagSolid className='basket' onClick={toggleCart} />
-              
+
                   {basket.length > 0 && (
-                     <span className="badge">{basket.length}</span>
+                    <span className="badge">{basket.length}</span>
                   )}
                 </li>
               </ul>
@@ -117,35 +138,35 @@ function Header() {
                 <div className='desc1'>
                   <div>
                     <p>{products.product.title}</p>
-                    
+
                   </div>
-              
+
                   <div>
                     <button onClick={() => deletedBasket(products._id)}><IoIosClose /></button>
                   </div>
                 </div>
-                
+
                 <div className='desc2'>
-                  
+
                   <div className='basketspan'>
                     <span onClick={() => decrease(products)}>-</span>
                     <span>{products.count}</span>
                     <span onClick={() => increase(products)}>+</span>
-                    
+
                   </div>
-                  
+
                   <div>
 
                     <p>${products.product.price}</p>
                   </div>
-                  
+
                 </div>
               </div>
               <hr />
             </div>
           ))}
         </div>
-        
+
         <div className='line'></div>
         <div className="offcanvas-footer">
           <div className='sup'>

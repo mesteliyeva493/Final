@@ -6,10 +6,11 @@ import mainContext from '../../../Context/Context';
 import { basketc } from '../../../Context/Basketc';
 import ShopDetail from './../../../Pages/Client/ShopDetail/ShopDetail';
 import Product from './../../../Pages/Admin/Product/Product';
+import toast from 'react-hot-toast';
 
 function Our() {
   const { addBasket, decrease, increase } = useContext(basketc);
-  const { product } = useContext(mainContext);
+  const { product, currentUser } = useContext(mainContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -37,7 +38,14 @@ function Our() {
                 <img src={products.img} alt={products.name} />
               </a>
               <div className='overlay'>
-                <FaShoppingBag className='icon' onClick={() => addBasket(products)} />
+                <FaShoppingBag className='icon' onClick={() => {
+                  if (currentUser) {
+
+                    addBasket(products)
+                  } else {
+                    toast.error('First login please')
+                  }
+                }} />
                 <IoEyeSharp className='icon' onClick={() => openModal(products)} />
               </div>
               <div className='card-desc'>
@@ -70,33 +78,61 @@ function Our() {
                 </div>
                 <div className='des3'>
                   <div className='span'>
-                    <span onClick={() => decrease(selectedProduct)}>-</span>
+                    <span onClick={() => {
+                      if (currentUser) {
+
+                        decrease(selectedProduct)
+
+                      } else {
+                        toast.error('First login please')
+                      }
+                    }
+
+                    }>-</span>
                     <span>{selectedProduct.count}</span>
-                    <span onClick={() => increase(selectedProduct)}>+</span>
-                  </div>
-                  <div>
-                    <button onClick={() => addBasket(selectedProduct)} >Add to cart</button>
-                  </div>
+                    <span onClick={() => {
+                      if (currentUser) {
+
+                        increase(selectedProduct)
+
+                      } else {
+                        toast.error('First login please')
+                      }
+
+                    } }>+</span>
                 </div>
-                <hr />
-                <div className='des4'>
-                  <div>
-                    <p>Category:  <span> {selectedProduct.category.title} </span></p>
-                  </div>
-                  <div> 
-                    <p>Tags:
-                      {selectedProduct.tags?.map((tag, index) => (
-                        <span className='sp' key={index}>{tag.title}</span>
-                      ))}
-                    </p>
-                  </div>
+                <div>
+                  <button onClick={() => {
+                    if (currentUser) {
+
+                      addBasket(selectedProduct)
+
+                    } else {
+                      toast.error('First login please')
+                    }
+                  }} >Add to cart</button>
+                </div>
+              </div>
+              <hr />
+              <div className='des4'>
+                <div>
+                  <p>Category:  <span> {selectedProduct.category.title} </span></p>
+                </div>
+                <div>
+                  <p>Tags:
+                    {selectedProduct.tags?.map((tag, index) => (
+                      <span className='sp' key={index}>{tag.title}</span>
+                    ))}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      )}
-    </section>
+        </div>
+  )
+}
+    </section >
   );
 }
 

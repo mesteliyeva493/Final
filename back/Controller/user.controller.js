@@ -41,13 +41,11 @@ const UserController = {
                         username: user.username,
                         email: user.email,
                         role: user.role,
-                        number: user.number,
                         password: user.password,
                         token: await generateToken({
                             id: user._id,
                             username: user.username,
                             email: user.email,
-                            number: user.number,
                             role: user.role,
                         })
                     }
@@ -61,11 +59,8 @@ const UserController = {
     },
     register: async (req, res) => {
         try {
-            const { username, email, number, role, password } = req.body
-            // const existEmail = await UserModel.find({ email: email })
-            // if (existEmail) {
-            //     res.send('This Email Is Exist')
-            // }
+            const { username, email, role, password } = req.body
+         
 
 
             const salt = await bcrypt.genSalt(10)
@@ -75,7 +70,6 @@ const UserController = {
                 username: username,
                 email: email,
                 role: role,
-                number: number,
                 password: hashedPassword
             })
 
@@ -84,17 +78,14 @@ const UserController = {
             res.status(201).send(
                 {
                     _id: createUser._id,
-
                     username: createUser.username,
                     email: createUser.email,
                     role: createUser.role,
-                    number: createUser.number,
                     password: createUser.password,
                     token: await generateToken({
                         id: createUser._id,
                         username: createUser.username,
                         email: createUser.email,
-                        number: createUser.number,
                         role: createUser.role,
                     })
                 }
@@ -111,9 +102,9 @@ const UserController = {
 
 
 
-const generateToken = async ({ id, username, email, number, role }) => {
-    return jwt.sign({ id, username, email, number, role }, process.env.JWT__SECRET__KEY, {
-        expiresIn: '2h'
+const generateToken = async ({ id, username, email, role }) => {
+    return jwt.sign({ id, username, email, role }, process.env.JWT__SECRET__KEY, {
+        expiresIn: '10h'
     })
 }
 module.exports = UserController

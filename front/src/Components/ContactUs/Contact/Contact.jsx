@@ -5,18 +5,19 @@ import { MdEmail } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 
 function Contact() {
   const formik = useFormik({
     initialValues: {
-      Name: '',
+      Email: '',
       Subject: '',
       Message: '',
     },
     validationSchema: Yup.object({
-      Name: Yup.string()
-        .max(15, 'Must be 15 characters or less')
+      Email: Yup.string()
         .required('Required'),
       Subject: Yup.string()
         .max(20, 'Must be 20 characters or less')
@@ -25,8 +26,12 @@ function Contact() {
         .max(20, 'Must be 20 characters or less')
         .required('Required'),
     }),
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: async (values) => {
+      await axios.post('http://localhost:5050/contact', values).then(() => {
+        toast.success('Your Message Successfully Sended')
+        formik.resetForm()
+
+      })
     },
   });
   return (
@@ -83,16 +88,16 @@ function Contact() {
         <div className='book'>
           <form onSubmit={formik.handleSubmit}>
             <input
-              placeholder='Your Name'
-              id="Name"
-              name="Name"
-              type="text"
+              placeholder='Your Email'
+              id="Email"
+              name="Email"
+              type="email"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.Name}
+              value={formik.values.Email}
             />
-            {formik.touched.Name && formik.errors.Name ? (
-              <div>{formik.errors.Name}</div>
+            {formik.touched.Email && formik.errors.Email ? (
+              <div>{formik.errors.Email}</div>
             ) : null}
 
             <input
@@ -108,11 +113,11 @@ function Contact() {
               <div>{formik.errors.Subject}</div>
             ) : null}
 
-          
+
             <textarea
               placeholder='Your Message'
-              id="message"
-              name="message"
+              id="Message"
+              name="Message"
               type="text"
               rows={5}
               onChange={formik.handleChange}

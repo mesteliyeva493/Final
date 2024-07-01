@@ -11,7 +11,7 @@
   import { Button } from '@mui/material';
 
   function Product() {
-    const { product, deletetProduct } = useContext(mainContext);
+    const { product, deletetProduct,getOneProduct } = useContext(mainContext);
 
     return (
       <section id='Product'>

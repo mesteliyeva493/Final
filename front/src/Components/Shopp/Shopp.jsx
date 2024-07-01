@@ -7,13 +7,13 @@ import mainContext from './../../Context/Context';
 import { FaShoppingBag } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { basketc } from '../../Context/Basketc';
-
+import toast from 'react-hot-toast'
 function Shopp() {
-  const { product: allProducts } = useContext(mainContext);
+  const { product: allProducts, currentUser } = useContext(mainContext);
   const { baddBasket } = useContext(basketc);
   const [column, setColumn] = useState(true);
   const [showFilter, setShowFilter] = useState(false);
-  const [value, setValue] = useState([0, 1000]); 
+  const [value, setValue] = useState([0, 1000]);
   const { addBasket } = useContext(basketc);
   const [data, setData] = useState(allProducts);
   const [sortType, setSortType] = useState('');
@@ -137,7 +137,14 @@ function Shopp() {
                       <img src={product.img} alt='' />
                     </a>
                     <div className='overlay'>
-                      <FaShoppingBag onClick={() => addBasket(product)} className='icon' />
+                      <FaShoppingBag onClick={() => {
+                        if (currentUser) {
+
+                          addBasket(product)
+                        } else {
+                          toast.error('First login please')
+                        }
+                      }} className='icon' />
                       <IoEyeSharp className='icon' onClick={() => openModal(product)} />
                     </div>
                     <div className='p3'>
@@ -154,7 +161,14 @@ function Shopp() {
                   <div className='card' key={product.id}>
                     <img src={product.img} alt='' />
                     <div className='overlay'>
-                      <FaShoppingBag className='icon' onClick={() => addBasket(product)} />
+                      <FaShoppingBag className='icon' onClick={() => {
+                        if (currentUser) {
+
+                          addBasket(product)
+                        } else {
+                          toast.error('First login please')
+                        }
+                      }} />
                       <IoEyeSharp className='icon' onClick={() => openModal(product)} />
                     </div>
                     <div className='p4'>
@@ -187,12 +201,35 @@ function Shopp() {
                     </div>
                     <div className='des3'>
                       <div className='span'>
-                        <span onClick={() => decrease(selectedProduct)}>-</span>
+                        <span onClick={() => {
+                          if (currentUser) {
+
+                            decrease(selectedProduct)
+                          } else {
+                            toast.error('First login please')
+                          }
+                        }}>-</span>
                         <span>{selectedProduct.count}</span>
-                        <span onClick={() => increase(selectedProduct)}>+</span>
+                        <span onClick={() => {
+                          if (currentUser) {
+
+                            increase(selectedProduct)
+
+                          } else {
+                            toast.error('First login please')
+                          }
+                        }}>+</span>
                       </div>
                       <div>
-                        <button onClick={() => addBasket(selectedProduct)}>Add to cart</button>
+                        <button onClick={() => {
+                          if (currentUser) {
+
+
+                            addBasket(selectedProduct)
+                          } else {
+                            toast.error('First login please')
+                          }
+                        }}>Add to cart</button>
                       </div>
                     </div>
                     <hr />
@@ -212,7 +249,7 @@ function Shopp() {
             </div>
           )}
         </div>
-      </section>
+      </section >
       <div
         className='offcanvas offcanvas-start'
         data-bs-scroll='true'
