@@ -468,10 +468,22 @@
                     }
         
                     .des4 {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 50px;
-        
+                      display: flex;
+                    flex-direction: row;
+                    gap: 50px;
+                    span{
+                        color: #85ac04;
+    
+                    }
+                    P{  
+                        color: rgb(0, 0, 0);
+                    }
+                    
+                    .sp{
+                      margin-right: 10px;
+    
+                      
+                    }
         
                         @media (max-width: 320px) {
                             flex-direction: column;

@@ -117,25 +117,35 @@ function Header() {
                 <div className='desc1'>
                   <div>
                     <p>{products.product.title}</p>
+                    
                   </div>
+              
                   <div>
                     <button onClick={() => deletedBasket(products._id)}><IoIosClose /></button>
                   </div>
                 </div>
+                
                 <div className='desc2'>
+                  
                   <div className='basketspan'>
                     <span onClick={() => decrease(products)}>-</span>
                     <span>{products.count}</span>
                     <span onClick={() => increase(products)}>+</span>
+                    
                   </div>
+                  
                   <div>
+
                     <p>${products.product.price}</p>
                   </div>
+                  
                 </div>
               </div>
+              <hr />
             </div>
           ))}
         </div>
+        
         <div className='line'></div>
         <div className="offcanvas-footer">
           <div className='sup'>

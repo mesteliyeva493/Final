@@ -198,11 +198,11 @@ function Shopp() {
                     <hr />
                     <div className='des4'>
                       <div>
-                        <p>Category: {selectedProduct.category.title}</p>
+                        <p>Category:  <span>{selectedProduct.category.title}</span></p>
                       </div>
                       <div>
                         <p>Tags: {selectedProduct.tags?.map((tag, index) => (
-                          <span className='mr-2' key={index}>{tag.title}</span>
+                          <span className='sp' key={index}>{tag.title}</span>
                         ))}</p>
                       </div>
                     </div>

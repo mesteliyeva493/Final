@@ -496,7 +496,19 @@
                 display: flex;
                 flex-direction: row;
                 gap: 50px;
+                span{
+                    color: #85ac04;
 
+                }
+                P{  
+                    color: black;
+                }
+                
+                .sp{
+                  margin-right: 10px;
+
+                  
+                }
 
                 @media (max-width: 320px) {
                     flex-direction: column;
@@ -863,7 +875,9 @@
 
             .sub {
                 margin-top: 20px;
-
+         display: flex;
+         flex-direction: row;
+         gap: 20px;
                 button {
                     cursor: pointer;
 

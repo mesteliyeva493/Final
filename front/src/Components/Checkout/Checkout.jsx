@@ -224,13 +224,13 @@ const Checkout = () => {
 
 
                 </li>
-                <li class="list-group-item">
+                {/* <li class="list-group-item">
                 <div className="plist4">
                     <p>Shipping</p>
                     <p>Flat rate: £8.00
                     </p>
                   </div>
-                </li>
+                </li> */}
                 <li class="list-group-item">
                 <div className="plist5">
                     <p>Total</p>

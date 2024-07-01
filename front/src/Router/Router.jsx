@@ -1,6 +1,8 @@
 import Add from "../Pages/Admin/Add/Add";
 import AdminRoot from "../Pages/Admin/AdminRoot";
+import Cardp from "../Pages/Admin/Card/Cardp";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
+import Logop from "../Pages/Admin/Logo/Logop";
 import Product from "../Pages/Admin/Product/Product";
 import AboutUs from "../Pages/Client/About us/AboutUs";
 import Basket from "../Pages/Client/Basket/Basket";
@@ -95,6 +97,14 @@ const ROUTES=[
            {
             path: "product",
             element: <Product/>
+           },
+           {
+            path: "logo",
+            element: <Logop/>
+           },
+           {
+            path: "card",
+            element: <Cardp/>
            }
         
         ]

@@ -16,7 +16,7 @@ function Shopdetail() {
     const { id } = useParams();
 
     const [detail, setDetail] = useState({});
-    
+
     useEffect(() => {
         axios.get(`http://localhost:5050/product/${id}`).then(res => {
             setDetail(res.data);
@@ -27,16 +27,23 @@ function Shopdetail() {
         setSelectedProduct(product);
         setIsModalOpen(true);
     };
-    
+
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedProduct(null);
     };
-    
+
     const [activeTab, setActiveTab] = useState('description');
     const lineRef = useRef(null);
     const descRef = useRef(null);
     const reviewsRef = useRef(null);
+    const formRef = useRef(null);
+
+    const handleReset = () => {
+        if (formRef.current) {
+            formRef.current.reset();
+        }
+    };
 
     useEffect(() => {
         const line = lineRef.current;
@@ -81,12 +88,12 @@ function Shopdetail() {
                         <hr />
                         <div className='des4'>
                             <div>
-                                <p>Category: {detail.category?.title}</p>
+                                <p>Category: <span>{detail.category?.title}</span></p>
                             </div>
-                            <div>
+                            <div className='tags'>
                                 <p>Tags: {
                                     detail.tags?.map((tag, index) => (
-                                        <span className='mr-2' key={index}>{tag.title}</span>
+                                        <span className='sp ' key={index}>{tag.title}</span>
                                     ))
                                 }</p>
                             </div>
@@ -124,7 +131,7 @@ function Shopdetail() {
                             <div>
                                 <p>There are no reviews yet.</p>
                             </div>
-                            <div className='rewform'>
+                            {/* <div className='rewform'>
                                 <div className='rewone'>
                                     <p className='p1'>Be the first to review “Cinnamon tea”</p>
                                     <p>Your email address will not be published. Required fields are marked *</p>
@@ -159,7 +166,48 @@ function Shopdetail() {
                                 <div className='sub'>
                                     <button>Submit</button>
                                 </div>
+                            </div> */}
+                            <div className='rewform'>
+                                <form ref={formRef}>
+                                    <div className='rewone'>
+                                        <p className='p1'>Be the first to review “Cinnamon tea”</p>
+                                        <p>Your email address will not be published. Required fields are marked *</p>
+                                    </div>
+                                    <div className='rawtwo'>
+                                        <p>Your rating *
+                                            <FaRegStar />
+                                            <FaRegStar />
+                                            <FaRegStar />
+                                            <FaRegStar />
+                                            <FaRegStar />
+                                        </p>
+                                    </div>
+                                    <div className='rewthree'>
+                                        <div>
+                                            <label htmlFor="review">Your review *</label>
+                                        </div>
+                                        <textarea name="review" id="review" cols="100" rows="5"></textarea>
+                                    </div>
+                                    <div className='rewfour'>
+                                        <div className='namemail'>
+                                            <div className='name'>
+                                                <label htmlFor="name">Name*</label>
+                                                <input type="text" name='name' />
+                                            </div>
+                                            <div className='email'>
+                                                <label htmlFor="email">Email*</label>
+                                                <input type="text" name='email' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='sub'>
+                                        <button type="submit">Submit</button>
+                                        <button type="button" onClick={handleReset}>Reset</button>
+                                    </div>
+                                </form>
                             </div>
+                            
+
                         </div>
                     )}
                 </div>
@@ -169,7 +217,7 @@ function Shopdetail() {
                         <h3>Related products</h3>
                     </div>
                     <div className='cardsh'>
-                        {product.slice(0,2).map((products, index) => (
+                        {product.slice(0, 2).map((products, index) => (
                             <div key={index} className='cardshop'>
                                 <a href={`/shopdetail/${products._id}`}>
                                     <img src={products.img} alt={products.name} />
@@ -218,11 +266,12 @@ function Shopdetail() {
                                     <hr />
                                     <div className='des4'>
                                         <div>
-                                            <p>Category: {selectedProduct.category.title}</p>
+                                            <p>Category:  <span>
+                                                {selectedProduct.category.title}</span></p>
                                         </div>
                                         <div>
                                             <p>Tags: {selectedProduct.tags?.map((tag, index) => (
-                                                <span className='mr-2' key={index}>{tag.title}</span>
+                                                <span className='sp' key={index}>{tag.title}</span>
                                             ))}</p>
                                         </div>
                                     </div>
