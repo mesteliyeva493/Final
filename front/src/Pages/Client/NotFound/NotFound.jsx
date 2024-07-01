@@ -1,9 +1,14 @@
 import React from 'react'
 import './NotFound.scss';
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
+
 function NotFound() {
   return (
     <>
+       <Helmet>
+    <title>NotFound</title>
+  </Helmet>
         <div id='NotFound'>
       <div id='error-text'>
         <img src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404" />

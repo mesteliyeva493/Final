@@ -10,11 +10,14 @@ import Aliquet from '../../../Components/Home/Aliquet/Aliquet'
 import Rhoncus from '../../../Components/Home/Rhoncus/Rhoncus'
 import Hcontact from '../../../Components/Home/Hcontact/Hcontact'
 import Hero from '../../../Components/Home/Hero/Hero'
+import {Helmet} from "react-helmet";
 
 function Home() {
   return (
     <>
-
+   <Helmet>
+    <title>Home</title>
+  </Helmet>
     <Hero/> 
       <DoYou/>
     <Author/>

@@ -19,56 +19,56 @@ import Shop from "../Pages/Client/Shop/Shop";
 import ShopDetail from "../Pages/Client/ShopDetail/ShopDetail";
 import AccountDetail from './../Pages/Client/AccountDetail/AccountDetail';
 
-const ROUTES=[
+const ROUTES = [
     {
-        path:"/",
-        element:<MainRoot/>,
-        children:[
+        path: "/",
+        element: <MainRoot />,
+        children: [
             {
-                path:"",
-                element:<Home/>
+                path: "",
+                element: <Home />
             },
             {
-                path:"aboutus",
-                element:<AboutUs/>
+                path: "aboutus",
+                element: <AboutUs />
             },
             {
-                path:"shop",
-                element:<Shop/>
+                path: "shop",
+                element: <Shop />
             },
             {
-                path:"myaccount",
-                element:<MyAccount/>
+                path: "myaccount",
+                element: <MyAccount />
             },
             {
-                path:"contactUs",
-                element:<ContactUs/>
+                path: "contactUs",
+                element: <ContactUs />
             },
             {
-                path:"accountdetail",
-                element:<AccountDetail/>
+                path: "accountdetail",
+                element: <AccountDetail />
             },
-         
+
             {
-                path:"orders",
-                element:<Orders/>
-            },
-            {
-                path:"login",
-                element:<Login/>
+                path: "orders",
+                element: <Orders />
             },
             {
-                path:"register",
-                element:<Register/>
+                path: "login",
+                element: <Login />
             },
             {
-                path:"checkout",
-                element:<CheckOut/>
+                path: "register",
+                element: <Register />
             },
-    
             {
-                path:"basket",
-                element:<Basket/>
+                path: "checkout",
+                element: <CheckOut />
+            },
+
+            {
+                path: "basket",
+                element: <Basket />
             },
             {
                 path: "shopdetail/:id",
@@ -76,37 +76,42 @@ const ROUTES=[
             },
             {
                 path: '*',
-                element: <NotFound/>
+                element: <NotFound />
             },
         ]
     },
     {
-        path:"/admin",
-        element:<AdminRoot/>,
-        children:[
+        path: "/admin",
+        element: <AdminRoot />,
+        children: [
             {
-                path:"",
-                element:<Dashboard/>
-               
+                path: "",
+                element: <Dashboard />
+
             },
             {
-                path:"add",
-                element:<Add/>
-  
+                path: "add",
+                element: <Add />
+
             },
-           {
-            path: "product",
-            element: <Product/>
-           },
-           {
-            path: "logo",
-            element: <Logop/>
-           },
-           {
-            path: "card",
-            element: <Cardp/>
-           },
-        
+            {
+                path: "product",
+                element: <Product />
+            },
+            {
+                path: "logo",
+                element: <Logop />
+            },
+            {
+                path: "card",
+                element: <Cardp />
+            },
+      
+
+
+
+
+
         ]
     }
 ]

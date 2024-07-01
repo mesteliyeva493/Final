@@ -16,7 +16,10 @@ function Add() {
 
 
   return (
+    <>
+  
     <section id='Add' className='col-9'>
+      
       <div className="tabs">
         <div className="tab-labels">
           <div className={`tab-label ${activeTab === 0 ? 'active' : ''}`} onClick={() => handleTabClick(0)}>
@@ -49,6 +52,7 @@ function Add() {
 
 
     </section>
+    </>
   )
 }
 

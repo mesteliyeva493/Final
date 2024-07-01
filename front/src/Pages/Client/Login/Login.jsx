@@ -1,11 +1,14 @@
 import React from 'react'
 import Account from '../../../Components/Account/Account'
+import { Helmet } from "react-helmet";
 
 function Login() {
   return (
-    <>
-        <Account/>
-    
+    <>     <Helmet>
+      <title>Login</title>
+    </Helmet>
+      <Account />
+
     </>
   )
 }

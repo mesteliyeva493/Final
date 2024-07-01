@@ -6,6 +6,7 @@ import Logo from '../../../Components/Home/Logo/Logo'
 import Hcontact from '../../../Components/Home/Hcontact/Hcontact'
 import Qee from '../../../Components/AboutUs/Qee/Qee'
 import Bringing from '../../../Components/AboutUs/Bringing/Bringing'
+import {Helmet} from "react-helmet";
 
 
 
@@ -14,6 +15,9 @@ import Bringing from '../../../Components/AboutUs/Bringing/Bringing'
 function AboutUs() {
   return (
     <>
+   <Helmet>
+    <title>AboutUs</title>
+  </Helmet>
     <Hero/>
     <Purus/>
    <Qee/>
