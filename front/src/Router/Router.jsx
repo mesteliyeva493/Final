@@ -105,7 +105,7 @@ const ROUTES=[
            {
             path: "card",
             element: <Cardp/>
-           }
+           },
         
         ]
     }

@@ -34,7 +34,7 @@ function Header() {
             <div className="col-lg-6 col-6 d-lg-flex d-none justify-content-end align-items-center">
               <ul className="nav-links">
                 <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
-                <li><NavLink to="/aboutus" activeClassName="active">About Us</NavLink></li>
+                <li><Link to="/aboutus" activeClassName="active">About Us</Link></li>
                 <li><NavLink to="/shop" activeClassName="active">Shop</NavLink></li>
                 <li className='dropdown-container'>
                   <NavLink to="/myaccount" activeClassName="active">My Account</NavLink>
