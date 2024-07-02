@@ -1,9 +1,11 @@
 import Add from "../Pages/Admin/Add/Add";
 import AdminRoot from "../Pages/Admin/AdminRoot";
 import Cardp from "../Pages/Admin/Card/Cardp";
-import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
+// import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import Logop from "../Pages/Admin/Logo/Logop";
+import Order from "../Pages/Admin/Order/Order";
 import Product from "../Pages/Admin/Product/Product";
+// import ProductEdit from "../Pages/Admin/ProductEdit/ProductEdit";
 import User from "../Pages/Admin/User/User";
 import AboutUs from "../Pages/Client/About us/AboutUs";
 import Basket from "../Pages/Client/Basket/Basket";
@@ -87,7 +89,7 @@ const ROUTES = [
         children: [
             {
                 path: "",
-                element: <Dashboard />
+                element: <Product />
 
             },
             {
@@ -95,10 +97,7 @@ const ROUTES = [
                 element: <Add />
 
             },
-            {
-                path: "product",
-                element: <Product />
-            },
+        
             {
                 path: "logo",
                 element: <Logop />
@@ -110,8 +109,16 @@ const ROUTES = [
             {
                 path: "user",
                 element: <User/>
-            }
-      
+            },
+            {
+                path: "order",
+                element: <Order/>
+            },
+            // {
+            //     path: "product/edit/:id",
+            //     element: <ProductEdit/>
+            // },
+             
       
 
 

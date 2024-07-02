@@ -112,7 +112,7 @@ function Account() {
           </div> */}
           <div className='iba'>
             <button type="submit">Log in</button>
-            <a className='lost'>Lost your password?</a>
+            {/* <a className='lost'>Lost your password?</a> */}
           </div>
         </form>
       </div>

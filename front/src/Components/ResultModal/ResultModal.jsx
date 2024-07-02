@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Result } from 'antd';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const ResultModal = () => {
     const navigate = useNavigate()

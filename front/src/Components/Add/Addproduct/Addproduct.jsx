@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import './Addproduct.scss'; 
-
+  
 import mainContext from '../../../Context/Context';
 
 function Addproduct() {
@@ -45,7 +45,6 @@ function Addproduct() {
       try {
         const tagsArray = values.tags.split(',').map(tag => tag.trim());
         const productData = { ...values, tags: tagsArray };
-
         const res = await axios.post("http://localhost:5050/product", productData);
         setData([...data, res.data]);
         resetForm(); 
@@ -62,8 +61,6 @@ function Addproduct() {
     }
   });
 
-  console.log('Form state:', formik.values, formik.errors, formik.touched);
-  console.log('Context data:', data);
 
   return (
     <div className="add-product-container">

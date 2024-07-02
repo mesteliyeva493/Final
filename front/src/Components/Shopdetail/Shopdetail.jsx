@@ -167,7 +167,7 @@ function Shopdetail() {
                                     <button>Submit</button>
                                 </div>
                             </div> */}
-                            <div className='rewform'>
+                            {/* <div className='rewform'>
                                 <form ref={formRef}>
                                     <div className='rewone'>
                                         <p className='p1'>Be the first to review “Cinnamon tea”</p>
@@ -205,7 +205,7 @@ function Shopdetail() {
                                         <button type="button" onClick={handleReset}>Reset</button>
                                     </div>
                                 </form>
-                            </div>
+                            </div> */}
                             
 
                         </div>

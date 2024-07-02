@@ -37,7 +37,6 @@ const ProductController
             const { img, name, title, description, price, category, tags } = req.body;
 
             const existingTags = await TagsModel.find({ '_id': { $in: tags } });
-
             const newProduct = new ProductModel({ img, name, title, description, price, category, tags: existingTags.map(tag => tag._id) });
             await newProduct.save();
 

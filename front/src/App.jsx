@@ -26,6 +26,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [currentUser, setCurrentUser] = useState(null)
+
   const getAllUsers = async () => {
     setLoading(true)
     await axios.get(`http://localhost:5050/users`).then(res => {
@@ -137,7 +138,10 @@ function App() {
 
   const [oneProduct, setOneProduct] = useState(null)
   const [productErr, setProductErr] = useState(null)
+  
 
+
+  
   const getOneProduct = async (id) => {
     await axios.get(`http://localhost:5050/product/${id}`).then(res => {
       setOneProduct(res.data)
